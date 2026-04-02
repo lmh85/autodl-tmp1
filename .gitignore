@@ -1,0 +1,14 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pkl
+*.bin
+*.safetensors
+*.zip
+*.tar
+*.gz
+models/
+pre_trained_prompt/
+
+# 只排除 data 里的 ttl 文件
+data/**/*.ttl
