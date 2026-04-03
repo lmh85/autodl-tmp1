@@ -183,7 +183,7 @@ if __name__ == '__main__':
     )
     # dataloader
     data_collator_teacher = CRSConvDataCollator(
-        tokenizer=tokenizer, device=device, use_amp=accelerator.use_fp16, debug=args.debug, gen=False,
+        tokenizer=tokenizer, device=device, use_amp=args.fp16, debug=args.debug, gen=False,
         ignore_pad_token_for_loss=args.ignore_pad_token_for_loss,
         context_max_length=args.context_max_length + args.resp_max_length,
         entity_max_length=args.entity_max_length, pad_entity_id=kg['pad_entity_id'],
@@ -209,7 +209,7 @@ if __name__ == '__main__':
         collate_fn=data_collator_teacher,
     )
     data_collator_generator = CRSConvDataCollator(
-        tokenizer=tokenizer, device=device, gen=True, use_amp=accelerator.use_fp16, debug=args.debug,
+        tokenizer=tokenizer, device=device, gen=True, use_amp=args.fp16, debug=args.debug,
         ignore_pad_token_for_loss=args.ignore_pad_token_for_loss,
         context_max_length=args.context_max_length, resp_max_length=args.resp_max_length,
         entity_max_length=args.entity_max_length, pad_entity_id=kg['pad_entity_id'],

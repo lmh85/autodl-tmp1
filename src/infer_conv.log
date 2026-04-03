@@ -1,0 +1,1030 @@
+nohup: ignoring input
+
+libgomp: Invalid value for environment variable OMP_NUM_THREADS
+The following values were not passed to `accelerate launch` and had defaults used instead:
+	`--num_processes` was set to a value of `1`
+	`--num_machines` was set to a value of `1`
+	`--mixed_precision` was set to a value of `'no'`
+	`--dynamo_backend` was set to a value of `'no'`
+To avoid this warning pass in values for each of the problematic parameters or run `accelerate config`.
+
+libgomp: Invalid value for environment variable OMP_NUM_THREADS
+2026-04-03 10:45:18.280 | INFO     | __main__:<module>:89 - Distributed environment: NO
+Num processes: 1
+Process index: 0
+Local process index: 0
+Device: cuda
+
+Mixed precision type: no
+
+2026-04-03 10:45:18.280 | INFO     | __main__:<module>:90 - {'seed': 42, 'output_dir': None, 'debug': False, 'dataset': 'redial', 'split': 'test', 'num_workers': 0, 'context_max_length': 200, 'resp_max_length': 183, 'entity_max_length': 32, 'prompt_max_length': 200, 'tokenizer': 'microsoft/DialoGPT-small', 'ignore_pad_token_for_loss': False, 'text_tokenizer': 'roberta-base', 'model': 'microsoft/DialoGPT-small', 'max_gen_len': 50, 'text_encoder': 'roberta-base', 'prompt_encoder': '/root/autodl-tmp/UniCRS-main/output_conv/final', 'n_prefix_conv': 20, 'num_bases': 8, 'num_train_epochs': 10, 'max_train_steps': None, 'per_device_train_batch_size': 4, 'per_device_eval_batch_size': 64, 'gradient_accumulation_steps': 1, 'learning_rate': 1e-05, 'weight_decay': 0.01, 'max_grad_norm': None, 'num_warmup_steps': 10000, 'fp16': False, 'use_wandb': False, 'entity': None, 'project': None, 'name': None, 'log_all': False}
+loading file vocab.json from cache at /root/.cache/huggingface/hub/models--microsoft--DialoGPT-small/snapshots/49c537161a457d5256512f9d2d38a87d81ae0f0e/vocab.json
+loading file merges.txt from cache at /root/.cache/huggingface/hub/models--microsoft--DialoGPT-small/snapshots/49c537161a457d5256512f9d2d38a87d81ae0f0e/merges.txt
+loading file tokenizer.json from cache at None
+loading file added_tokens.json from cache at None
+loading file special_tokens_map.json from cache at None
+loading file tokenizer_config.json from cache at /root/.cache/huggingface/hub/models--microsoft--DialoGPT-small/snapshots/49c537161a457d5256512f9d2d38a87d81ae0f0e/tokenizer_config.json
+Assigning <pad> to the pad_token key of the tokenizer
+Assigning ['<movie>'] to the additional_special_tokens key of the tokenizer
+loading configuration file config.json from cache at /root/.cache/huggingface/hub/models--microsoft--DialoGPT-small/snapshots/49c537161a457d5256512f9d2d38a87d81ae0f0e/config.json
+Model config GPT2Config {
+  "activation_function": "gelu_new",
+  "architectures": [
+    "GPT2LMHeadModel"
+  ],
+  "attn_pdrop": 0.1,
+  "bos_token_id": 50256,
+  "embd_pdrop": 0.1,
+  "eos_token_id": 50256,
+  "initializer_range": 0.02,
+  "layer_norm_epsilon": 1e-05,
+  "model_type": "gpt2",
+  "n_ctx": 1024,
+  "n_embd": 768,
+  "n_head": 12,
+  "n_inner": null,
+  "n_layer": 12,
+  "n_positions": 1024,
+  "reorder_and_upcast_attn": false,
+  "resid_pdrop": 0.1,
+  "scale_attn_by_inverse_layer_idx": false,
+  "scale_attn_weights": true,
+  "summary_activation": null,
+  "summary_first_dropout": 0.1,
+  "summary_proj_to_labels": true,
+  "summary_type": "cls_index",
+  "summary_use_proj": true,
+  "task_specific_params": {
+    "conversational": {
+      "max_length": 1000
+    }
+  },
+  "transformers_version": "4.28.0",
+  "use_cache": true,
+  "vocab_size": 50257
+}
+
+loading weights file model.safetensors from cache at /root/.cache/huggingface/hub/models--microsoft--DialoGPT-small/snapshots/49c537161a457d5256512f9d2d38a87d81ae0f0e/model.safetensors
+Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "transformers_version": "4.28.0"
+}
+
+All model checkpoint weights were used when initializing PromptGPT2forCRS.
+
+All the weights of PromptGPT2forCRS were initialized from the model checkpoint at microsoft/DialoGPT-small.
+If your task is similar to the task the model of the checkpoint was trained on, you can already use PromptGPT2forCRS for predictions without further training.
+loading configuration file generation_config.json from cache at /root/.cache/huggingface/hub/models--microsoft--DialoGPT-small/snapshots/49c537161a457d5256512f9d2d38a87d81ae0f0e/generation_config.json
+Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "transformers_version": "4.28.0"
+}
+
+loading configuration file config.json from cache at /root/.cache/huggingface/hub/models--roberta-base/snapshots/e2da8e2f811d1448a5b465c236feacd80ffbac7b/config.json
+Model config RobertaConfig {
+  "_name_or_path": "roberta-base",
+  "architectures": [
+    "RobertaForMaskedLM"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "bos_token_id": 0,
+  "classifier_dropout": null,
+  "eos_token_id": 2,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-05,
+  "max_position_embeddings": 514,
+  "model_type": "roberta",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 1,
+  "position_embedding_type": "absolute",
+  "transformers_version": "4.28.0",
+  "type_vocab_size": 1,
+  "use_cache": true,
+  "vocab_size": 50265
+}
+
+loading file vocab.json from cache at /root/.cache/huggingface/hub/models--roberta-base/snapshots/e2da8e2f811d1448a5b465c236feacd80ffbac7b/vocab.json
+loading file merges.txt from cache at /root/.cache/huggingface/hub/models--roberta-base/snapshots/e2da8e2f811d1448a5b465c236feacd80ffbac7b/merges.txt
+loading file tokenizer.json from cache at /root/.cache/huggingface/hub/models--roberta-base/snapshots/e2da8e2f811d1448a5b465c236feacd80ffbac7b/tokenizer.json
+loading file added_tokens.json from cache at None
+loading file special_tokens_map.json from cache at None
+loading file tokenizer_config.json from cache at /root/.cache/huggingface/hub/models--roberta-base/snapshots/e2da8e2f811d1448a5b465c236feacd80ffbac7b/tokenizer_config.json
+loading configuration file config.json from cache at /root/.cache/huggingface/hub/models--roberta-base/snapshots/e2da8e2f811d1448a5b465c236feacd80ffbac7b/config.json
+Model config RobertaConfig {
+  "_name_or_path": "roberta-base",
+  "architectures": [
+    "RobertaForMaskedLM"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "bos_token_id": 0,
+  "classifier_dropout": null,
+  "eos_token_id": 2,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-05,
+  "max_position_embeddings": 514,
+  "model_type": "roberta",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 1,
+  "position_embedding_type": "absolute",
+  "transformers_version": "4.28.0",
+  "type_vocab_size": 1,
+  "use_cache": true,
+  "vocab_size": 50265
+}
+
+Assigning ['<movie>'] to the additional_special_tokens key of the tokenizer
+loading configuration file config.json from cache at /root/.cache/huggingface/hub/models--roberta-base/snapshots/e2da8e2f811d1448a5b465c236feacd80ffbac7b/config.json
+Model config RobertaConfig {
+  "_name_or_path": "roberta-base",
+  "architectures": [
+    "RobertaForMaskedLM"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "bos_token_id": 0,
+  "classifier_dropout": null,
+  "eos_token_id": 2,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-05,
+  "max_position_embeddings": 514,
+  "model_type": "roberta",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 1,
+  "position_embedding_type": "absolute",
+  "transformers_version": "4.28.0",
+  "type_vocab_size": 1,
+  "use_cache": true,
+  "vocab_size": 50265
+}
+
+loading weights file model.safetensors from cache at /root/.cache/huggingface/hub/models--roberta-base/snapshots/e2da8e2f811d1448a5b465c236feacd80ffbac7b/model.safetensors
+Some weights of the model checkpoint at roberta-base were not used when initializing RobertaModel: ['lm_head.layer_norm.weight', 'lm_head.dense.bias', 'lm_head.layer_norm.bias', 'lm_head.bias', 'lm_head.dense.weight']
+- This IS expected if you are initializing RobertaModel from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing RobertaModel from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+All the weights of RobertaModel were initialized from the model checkpoint at roberta-base.
+If your task is similar to the task the model of the checkpoint was trained on, you can already use RobertaModel for predictions without further training.
+/root/autodl-tmp/UniCRS-main/src/model_prompt.py:143: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  torch.load(load_path, map_location=torch.device('cpu')), strict=False
+['edge_index', 'edge_type'] []
+  0%|          | 0/7978 [00:00<?, ?it/s]/root/miniconda3/envs/fiup/lib/python3.10/site-packages/transformers/tokenization_utils_base.py:3596: UserWarning: `as_target_tokenizer` is deprecated and will be removed in v5 of Transformers. You can tokenize your labels by using the argument `text_target` of the regular `__call__` method (either in the same call as your input texts if you use the same keyword arguments, or in a separate call.
+  warnings.warn(
+  2%|▏         | 182/7978 [00:00<00:04, 1811.21it/s]  5%|▍         | 370/7978 [00:00<00:04, 1850.73it/s]  7%|▋         | 568/7978 [00:00<00:03, 1906.89it/s] 10%|▉         | 775/7978 [00:00<00:03, 1966.15it/s] 12%|█▏        | 982/7978 [00:00<00:03, 2000.68it/s] 15%|█▍        | 1195/7978 [00:00<00:03, 2041.14it/s] 18%|█▊        | 1400/7978 [00:00<00:03, 2021.74it/s] 20%|██        | 1630/7978 [00:00<00:03, 2108.14it/s] 23%|██▎       | 1850/7978 [00:00<00:02, 2135.78it/s] 26%|██▋       | 2110/7978 [00:01<00:02, 2275.23it/s] 30%|██▉       | 2387/7978 [00:01<00:02, 2422.94it/s]Token indices sequence length is longer than the specified maximum sequence length for this model (525 > 512). Running this sequence through the model will result in indexing errors
+ 33%|███▎      | 2630/7978 [00:01<00:02, 2288.54it/s] 36%|███▋      | 2899/7978 [00:01<00:02, 2404.42it/s] 39%|███▉      | 3142/7978 [00:01<00:02, 2389.89it/s] 43%|████▎     | 3393/7978 [00:01<00:01, 2424.73it/s] 46%|████▌     | 3637/7978 [00:01<00:01, 2396.31it/s] 49%|████▊     | 3878/7978 [00:01<00:01, 2363.21it/s] 52%|█████▏    | 4125/7978 [00:01<00:01, 2393.30it/s] 55%|█████▍    | 4386/7978 [00:01<00:01, 2452.86it/s] 58%|█████▊    | 4632/7978 [00:02<00:01, 2423.77it/s] 61%|██████    | 4875/7978 [00:02<00:01, 2382.26it/s] 64%|██████▍   | 5114/7978 [00:02<00:01, 2314.02it/s] 67%|██████▋   | 5346/7978 [00:02<00:01, 2229.79it/s] 70%|██████▉   | 5570/7978 [00:02<00:01, 2169.21it/s] 73%|███████▎  | 5788/7978 [00:02<00:01, 2115.56it/s] 75%|███████▌  | 6001/7978 [00:02<00:00, 2037.68it/s] 78%|███████▊  | 6213/7978 [00:02<00:00, 2058.59it/s] 80%|████████  | 6420/7978 [00:02<00:00, 2011.07it/s] 83%|████████▎ | 6622/7978 [00:03<00:00, 1927.92it/s] 85%|████████▌ | 6816/7978 [00:03<00:00, 1811.91it/s] 88%|████████▊ | 6999/7978 [00:03<00:00, 1765.25it/s] 91%|█████████ | 7227/7978 [00:03<00:00, 1905.71it/s] 93%|█████████▎| 7420/7978 [00:03<00:00, 1880.01it/s] 95%|█████████▌| 7616/7978 [00:03<00:00, 1902.16it/s] 99%|█████████▊| 7865/7978 [00:03<00:00, 2071.30it/s]100%|██████████| 7978/7978 [00:03<00:00, 2146.56it/s]
+  0%|          | 0/111 [00:00<?, ?it/s]You're using a GPT2TokenizerFast tokenizer. Please note that with a fast tokenizer, using the `__call__` method is faster than using a method to encode the text followed by a call to the `pad` method to get a padded encoding.
+/root/miniconda3/envs/fiup/lib/python3.10/site-packages/transformers/tokenization_utils_base.py:2372: UserWarning: `max_length` is ignored when `padding`=`True` and there is no truncation strategy. To pad to max length, use `padding='max_length'`.
+  warnings.warn(
+You're using a RobertaTokenizerFast tokenizer. Please note that with a fast tokenizer, using the `__call__` method is faster than using a method to encode the text followed by a call to the `pad` method to get a padded encoding.
+Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+/root/miniconda3/envs/fiup/lib/python3.10/site-packages/transformers/generation/utils.py:1219: UserWarning: You have modified the pretrained model configuration to control generation. This is a deprecated strategy to control generation and will be removed soon, in a future version. Please use a generation configuration file (see https://huggingface.co/docs/transformers/main_classes/text_generation)
+  warnings.warn(
+/root/miniconda3/envs/fiup/lib/python3.10/site-packages/nltk/translate/bleu_score.py:577: UserWarning: 
+The hypothesis contains 0 counts of 2-gram overlaps.
+Therefore the BLEU score evaluates to 0, independently of
+how many N-gram overlaps of lower order it contains.
+Consider using lower n-gram order or use SmoothingFunction()
+  warnings.warn(_msg)
+/root/miniconda3/envs/fiup/lib/python3.10/site-packages/nltk/translate/bleu_score.py:577: UserWarning: 
+The hypothesis contains 0 counts of 3-gram overlaps.
+Therefore the BLEU score evaluates to 0, independently of
+how many N-gram overlaps of lower order it contains.
+Consider using lower n-gram order or use SmoothingFunction()
+  warnings.warn(_msg)
+/root/miniconda3/envs/fiup/lib/python3.10/site-packages/nltk/translate/bleu_score.py:577: UserWarning: 
+The hypothesis contains 0 counts of 4-gram overlaps.
+Therefore the BLEU score evaluates to 0, independently of
+how many N-gram overlaps of lower order it contains.
+Consider using lower n-gram order or use SmoothingFunction()
+  warnings.warn(_msg)
+  1%|          | 1/111 [00:04<08:55,  4.87s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+  2%|▏         | 2/111 [00:08<07:55,  4.36s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+  3%|▎         | 3/111 [00:13<08:22,  4.65s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+  4%|▎         | 4/111 [00:18<08:36,  4.83s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+  5%|▍         | 5/111 [00:26<10:09,  5.75s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+  5%|▌         | 6/111 [00:30<09:04,  5.19s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+  6%|▋         | 7/111 [00:36<09:27,  5.46s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+  7%|▋         | 8/111 [00:42<09:28,  5.52s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+  8%|▊         | 9/111 [00:45<08:18,  4.89s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+  9%|▉         | 10/111 [00:49<07:44,  4.60s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 10%|▉         | 11/111 [00:54<07:59,  4.80s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 11%|█         | 12/111 [00:59<07:45,  4.70s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 12%|█▏        | 13/111 [01:03<07:17,  4.46s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 13%|█▎        | 14/111 [01:07<07:07,  4.41s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 14%|█▎        | 15/111 [01:12<07:32,  4.71s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 14%|█▍        | 16/111 [01:16<07:04,  4.47s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 15%|█▌        | 17/111 [01:22<07:44,  4.94s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 16%|█▌        | 18/111 [01:26<07:06,  4.59s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 17%|█▋        | 19/111 [01:29<06:22,  4.16s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 18%|█▊        | 20/111 [01:34<06:37,  4.37s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 19%|█▉        | 21/111 [01:37<06:04,  4.06s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 20%|█▉        | 22/111 [01:40<05:33,  3.74s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 21%|██        | 23/111 [01:44<05:23,  3.68s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 22%|██▏       | 24/111 [01:48<05:17,  3.65s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 23%|██▎       | 25/111 [01:59<08:33,  5.97s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 23%|██▎       | 26/111 [02:03<07:25,  5.24s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 24%|██▍       | 27/111 [02:04<05:57,  4.25s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 25%|██▌       | 28/111 [02:09<05:48,  4.20s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 26%|██▌       | 29/111 [02:13<05:51,  4.28s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 27%|██▋       | 30/111 [02:16<05:20,  3.96s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 28%|██▊       | 31/111 [02:20<05:10,  3.88s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 29%|██▉       | 32/111 [02:24<05:00,  3.81s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 30%|██▉       | 33/111 [02:29<05:25,  4.17s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 31%|███       | 34/111 [02:33<05:23,  4.20s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 32%|███▏      | 35/111 [02:37<05:12,  4.11s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 32%|███▏      | 36/111 [02:42<05:26,  4.35s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 33%|███▎      | 37/111 [02:46<05:12,  4.22s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 34%|███▍      | 38/111 [02:50<05:14,  4.30s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 35%|███▌      | 39/111 [02:55<05:22,  4.48s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 36%|███▌      | 40/111 [02:59<05:03,  4.27s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 37%|███▋      | 41/111 [03:03<04:51,  4.17s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 38%|███▊      | 42/111 [03:09<05:38,  4.90s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 39%|███▊      | 43/111 [03:16<06:08,  5.41s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 40%|███▉      | 44/111 [03:20<05:45,  5.15s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 41%|████      | 45/111 [03:28<06:24,  5.82s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 41%|████▏     | 46/111 [03:31<05:33,  5.12s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 42%|████▏     | 47/111 [03:35<04:56,  4.64s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 43%|████▎     | 48/111 [03:40<05:07,  4.88s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 44%|████▍     | 49/111 [03:44<04:41,  4.54s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 45%|████▌     | 50/111 [03:49<04:46,  4.69s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 46%|████▌     | 51/111 [03:53<04:20,  4.34s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 47%|████▋     | 52/111 [03:56<03:55,  4.00s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 48%|████▊     | 53/111 [04:00<04:03,  4.19s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 49%|████▊     | 54/111 [04:07<04:46,  5.03s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 50%|████▉     | 55/111 [04:11<04:19,  4.64s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 50%|█████     | 56/111 [04:15<04:00,  4.38s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 51%|█████▏    | 57/111 [04:18<03:38,  4.04s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 52%|█████▏    | 58/111 [04:22<03:23,  3.85s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 53%|█████▎    | 59/111 [04:25<03:09,  3.64s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 54%|█████▍    | 60/111 [04:29<03:17,  3.88s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 55%|█████▍    | 61/111 [04:33<03:06,  3.73s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 56%|█████▌    | 62/111 [04:36<03:02,  3.73s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 57%|█████▋    | 63/111 [04:41<03:09,  3.95s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 58%|█████▊    | 64/111 [04:45<03:03,  3.90s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 59%|█████▊    | 65/111 [04:49<03:04,  4.01s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 59%|█████▉    | 66/111 [04:53<02:58,  3.98s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 60%|██████    | 67/111 [04:56<02:43,  3.71s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 61%|██████▏   | 68/111 [04:59<02:34,  3.60s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 62%|██████▏   | 69/111 [05:04<02:41,  3.85s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 63%|██████▎   | 70/111 [05:14<03:58,  5.81s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 64%|██████▍   | 71/111 [05:18<03:33,  5.35s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 65%|██████▍   | 72/111 [05:22<03:05,  4.76s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 66%|██████▌   | 73/111 [05:25<02:49,  4.45s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 67%|██████▋   | 74/111 [05:29<02:38,  4.28s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 68%|██████▊   | 75/111 [05:34<02:42,  4.51s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 68%|██████▊   | 76/111 [05:40<02:51,  4.90s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 69%|██████▉   | 77/111 [05:45<02:45,  4.88s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 70%|███████   | 78/111 [05:49<02:29,  4.52s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 71%|███████   | 79/111 [05:53<02:22,  4.45s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 72%|███████▏  | 80/111 [05:57<02:11,  4.24s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 73%|███████▎  | 81/111 [06:01<02:09,  4.31s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 74%|███████▍  | 82/111 [06:05<01:59,  4.13s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 75%|███████▍  | 83/111 [06:10<02:04,  4.46s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 76%|███████▌  | 84/111 [06:14<01:57,  4.34s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 77%|███████▋  | 85/111 [06:17<01:44,  4.03s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 77%|███████▋  | 86/111 [06:24<01:57,  4.69s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 78%|███████▊  | 87/111 [06:30<02:06,  5.26s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 79%|███████▉  | 88/111 [06:34<01:50,  4.79s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 80%|████████  | 89/111 [06:39<01:49,  4.99s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 81%|████████  | 90/111 [06:43<01:39,  4.72s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 82%|████████▏ | 91/111 [06:48<01:31,  4.58s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 83%|████████▎ | 92/111 [06:52<01:23,  4.37s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 84%|████████▍ | 93/111 [06:56<01:17,  4.29s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 85%|████████▍ | 94/111 [07:02<01:21,  4.80s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 86%|████████▌ | 95/111 [07:07<01:17,  4.82s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 86%|████████▋ | 96/111 [07:12<01:14,  4.95s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 87%|████████▋ | 97/111 [07:16<01:07,  4.81s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 88%|████████▊ | 98/111 [07:20<00:58,  4.48s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 89%|████████▉ | 99/111 [07:23<00:47,  3.99s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 90%|█████████ | 100/111 [07:25<00:38,  3.51s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 91%|█████████ | 101/111 [07:29<00:35,  3.59s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+

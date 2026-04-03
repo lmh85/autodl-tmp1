@@ -9,10 +9,6 @@ from transformers import AutoTokenizer
 
 from config import gpt2_special_tokens_dict
 from utils import padded_tensor
-from modules.sentiment import SentimentAnalyzer
-
-# 初始化情感分析器
-sentiment_analyzer = SentimentAnalyzer()
 
 
 class CRSConvDataset(Dataset):
@@ -91,16 +87,11 @@ class CRSConvDataset(Dataset):
                     resp_ids = resp_ids[:self.resp_max_length]
                     resp_ids.append(self.tokenizer.eos_token_id)
 
-                # 分析用户最新输入的情感
-                user_utt = dialog['context'][-1] if dialog['context'] else ''
-                sentiment_score = sentiment_analyzer.score(user_utt)
-
                 data = {
                     'context': context_ids,
                     'resp': resp_ids,
                     'entity': dialog['entity'][-self.entity_max_length:],
-                    'prompt': prompt_ids,
-                    'sentiment': sentiment_score
+                    'prompt': prompt_ids
                 }
                 self.data.append(data)
 
@@ -154,7 +145,6 @@ class CRSConvDataCollator:
         entity_batch = []
         resp_batch = []
         context_len_batch = []
-        sentiment_batch = []
 
         if self.gen:
             self.tokenizer.padding_side = 'left'
@@ -168,7 +158,6 @@ class CRSConvDataCollator:
                 prompt_batch['input_ids'].append(data['prompt'])
                 resp_batch.append(data['resp'])
                 entity_batch.append(data['entity'])
-                sentiment_batch.append(data['sentiment'])
         else:
             self.tokenizer.padding_side = 'right'
 
@@ -179,7 +168,6 @@ class CRSConvDataCollator:
 
                 prompt_batch['input_ids'].append(data['prompt'])
                 entity_batch.append(data['entity'])
-                sentiment_batch.append(data['sentiment'])
 
         input_batch = {}
 
@@ -210,16 +198,12 @@ class CRSConvDataCollator:
         input_batch['prompt'] = prompt_batch
 
         entity_batch = padded_tensor(
-        entity_batch, pad_idx=self.pad_entity_id, pad_tail=True, device=self.device,
-        use_amp=self.use_amp, debug=self.debug, max_len=self.entity_max_length
-    )
-    input_batch['entity'] = entity_batch
+            entity_batch, pad_idx=self.pad_entity_id, pad_tail=True, device=self.device,
+            use_amp=self.use_amp, debug=self.debug, max_len=self.entity_max_length
+        )
+        input_batch['entity'] = entity_batch
 
-    # 添加情感得分
-    sentiment_batch = torch.as_tensor(sentiment_batch, device=self.device, dtype=torch.float32)
-    input_batch['sentiment'] = sentiment_batch
-
-    return input_batch
+        return input_batch
 
 
 if __name__ == '__main__':

@@ -121,7 +121,46 @@ accelerate launch train_conv.py \
     --use_wandb \  # if you do not want to use wandb, comment it and the lines below
     --project crs-prompt-conv \  # wandb project name
     --name xxx  # wandb experiment name
-    
+    自用
+    accelerate launch train_conv.py \
+--dataset redial \
+--tokenizer microsoft/DialoGPT-small \
+--model microsoft/DialoGPT-small \
+--text_tokenizer roberta-base \
+--text_encoder roberta-base \
+--n_prefix_conv 20 \
+--prompt_encoder /root/autodl-tmp/UniCRS-main/pre_trained_prompt/final \
+--num_train_epochs 10 \
+--gradient_accumulation_steps 1 \
+--ignore_pad_token_for_loss \
+--per_device_train_batch_size 8 \
+--per_device_eval_batch_size 16 \
+--num_warmup_steps 6345 \
+--context_max_length 200 \
+--resp_max_length 183 \
+--prompt_max_length 200 \
+--entity_max_length 32 \
+--learning_rate 1e-4
+后台运行 nohup accelerate launch train_conv.py \
+--dataset redial \
+--tokenizer microsoft/DialoGPT-small \
+--model microsoft/DialoGPT-small \
+--text_tokenizer roberta-base \
+--text_encoder roberta-base \
+--n_prefix_conv 20 \
+--prompt_encoder /root/autodl-tmp/UniCRS-main/pre_trained_prompt/final \
+--num_train_epochs 10 \
+--gradient_accumulation_steps 1 \
+--ignore_pad_token_for_loss \
+--per_device_train_batch_size 8 \
+--per_device_eval_batch_size 16 \
+--num_warmup_steps 6345 \
+--context_max_length 200 \
+--resp_max_length 183 \
+--prompt_max_length 200 \
+--entity_max_length 32 \
+--learning_rate 1e-4 \
+--output_dir /root/autodl-tmp/UniCRS-main/output_conv > train_conv.log 2>&1 &
 # infer
 accelerate launch infer_conv.py \
     --dataset redial \  # [redial, inspired]
@@ -138,7 +177,20 @@ accelerate launch infer_conv.py \
     --prompt_max_length 200 \
     --entity_max_length 32
 ```
-
+自用 nohup accelerate launch infer_conv.py \
+--dataset redial \
+--split test \
+--tokenizer microsoft/DialoGPT-small \
+--model microsoft/DialoGPT-small \
+--text_tokenizer roberta-base \
+--text_encoder roberta-base \
+--n_prefix_conv 20 \
+--prompt_encoder /root/autodl-tmp/UniCRS-main/output_conv/final \
+--per_device_eval_batch_size 64 \
+--context_max_length 200 \
+--resp_max_length 183 \
+--prompt_max_length 200 \
+--entity_max_length 32 > infer_conv.log 2>&1 &
 ### Recommendation Task
 
 ```bash
