@@ -22,6 +22,10 @@ from evaluate_conv import ConvEvaluator
 from model_gpt2 import PromptGPT2forCRS
 from model_prompt import KGPrompt
 
+from modules.sentiment import SentimentAnalyzer    # [FIUP-NEW]
+from modules.fiup_manager import FIUPManager        # [FIUP-NEW]
+from dataset_rec import build_prompt_with_fiup      # [FIUP-NEW]
+
 
 def parse_args():
     parser = argparse.ArgumentParser()
@@ -68,6 +72,15 @@ def parse_args():
     parser.add_argument("--name", type=str, help="wandb exp name")
     parser.add_argument("--log_all", action="store_true", help="log in all processes, otherwise only in rank0")
 
+    # FIUP 
+    parser.add_argument("--use_fiup", action="store_true", default=False,
+                        help="启用 FIUP 双库用户画像模块")
+    parser.add_argument("--fiup_alpha", type=float, default=0.8,
+                        help="FIUP 遗忘衰减系数")
+    parser.add_argument("--sentiment_backend", type=str, default="textblob",
+                        choices=["textblob", "transformers"],
+                        help="情感分析后端")
+
     args = parser.parse_args()
     return args
 
@@ -81,6 +94,7 @@ if __name__ == '__main__':
     mixed_precision = "fp16" if args.fp16 else "no"
     accelerator = Accelerator(device_placement=False, mixed_precision=mixed_precision)  
     device = accelerator.device
+
 
     # Make one log on every process with the configuration for debugging.
     local_time = time.strftime("%Y-%m-%d-%H-%M-%S", time.localtime())
@@ -131,6 +145,14 @@ if __name__ == '__main__':
     text_encoder = AutoModel.from_pretrained(args.text_encoder)
     text_encoder.resize_token_embeddings(len(text_tokenizer))
     text_encoder = text_encoder.to(device)
+
+    # ── [FIUP] 对话训练 FIUP 初始化 ──────────────────────────────────────────
+    if args.use_fiup:
+        sentiment_analyzer_conv = SentimentAnalyzer(backend=args.sentiment_backend)
+        fiup_managers_conv: dict = {}
+        EMB_DIM_CONV = text_encoder.config.hidden_size
+        logger.info(f"[FIUP-Conv] Initialized. EMB_DIM={EMB_DIM_CONV}, alpha={args.fiup_alpha}")
+    # ──────────────────────────────────────────────────────────────────────────
 
     prompt_encoder = KGPrompt(
         model.config.n_embd, text_encoder.config.hidden_size, model.config.n_head, model.config.n_layer, 2,
@@ -267,6 +289,53 @@ if __name__ == '__main__':
         train_loss = []
         prompt_encoder.train()
         for step, batch in enumerate(train_dataloader):
+            # ── [FIUP] 对话训练 FIUP 注入（仅在 --use_fiup 时启用）──────────
+            if args.use_fiup:
+                batch_size         = len(batch["context"]["input_ids"])
+                user_ids           = batch.get("user_id",       [f"u{step}_{i}" for i in range(batch_size)])
+                context_strs       = batch.get("context_str",   [""] * batch_size)
+                entity_names_batch = batch.get("entity_names",  [[] for _ in range(batch_size)])
+
+                prompt_context_list = batch.get("_prompt_context_list", context_strs)
+                prompt_kg_list      = batch.get("_prompt_kg_list",      [""] * batch_size)
+
+                fiup_prompts = []
+                for uid, ctx_str, attrs in zip(user_ids, context_strs, entity_names_batch):
+                    if uid not in fiup_managers_conv:
+                        fiup_managers_conv[uid] = FIUPManager(emb_dim=EMB_DIM_CONV, alpha=args.fiup_alpha)
+                    mgr = fiup_managers_conv[uid]
+
+                    e_tau = sentiment_analyzer_conv.score(ctx_str)
+
+                    tokenized = text_tokenizer(
+                        ctx_str,
+                        return_tensors="pt",
+                        max_length=128,
+                        truncation=True,
+                        padding=True,
+                    ).to(device)
+                    with torch.no_grad():
+                        context_emb = text_encoder(**tokenized).last_hidden_state[:, 0, :].squeeze(0).cpu()
+
+                    mgr.update_profile(attrs, e_tau, context_emb)
+                    fiup_prompts.append(mgr.build_profile_prompt())
+
+                new_prompt_encodings = [
+                    build_prompt_with_fiup(
+                        context_text=ctx,
+                        kg_text=kg_text,
+                        fiup_prompt=fp,
+                        tokenizer=text_tokenizer,
+                        max_length=args.prompt_max_length,
+                    )
+                    for ctx, kg_text, fp in zip(prompt_context_list, prompt_kg_list, fiup_prompts)
+                ]
+                batch['prompt'] = {
+                    k: torch.cat([enc[k] for enc in new_prompt_encodings], dim=0).to(device)
+                    for k in new_prompt_encodings[0].keys()
+                }
+                batch["fiup_prompts"] = fiup_prompts
+            # ── [FIUP] 结束对话训练 FIUP 注入 ────────────────────────────────
             with torch.no_grad():
                 token_embeds = text_encoder(**batch['prompt']).last_hidden_state
             prompt_embeds = prompt_encoder(

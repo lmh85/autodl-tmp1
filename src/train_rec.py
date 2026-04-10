@@ -291,10 +291,11 @@ if __name__ == '__main__':
     os.makedirs(best_metric_dir, exist_ok=True)
 
     # ── [FIUP-NEW] 初始化情感分析器和用户画像管理器 ──────────────────────────
-    sentiment_analyzer = SentimentAnalyzer(backend="textblob")  # 训练时用轻量版
-    fiup_managers: dict = {}                                      # user_id (str) -> FIUPManager
-    EMB_DIM = text_encoder.config.hidden_size                    # 与 text_encoder 对齐（通常 768）
-    logger.info(f"[FIUP] Initialized. EMB_DIM={EMB_DIM}")
+    if args.use_fiup:
+        sentiment_analyzer = SentimentAnalyzer(backend=args.sentiment_backend)
+        fiup_managers: dict = {}
+        EMB_DIM = text_encoder.config.hidden_size
+        logger.info(f"[FIUP] Initialized. EMB_DIM={EMB_DIM}, alpha={args.fiup_alpha}, backend={args.sentiment_backend}")
     # ────────────────────────────────────────────────────────────────────────
 
     # train loop
@@ -303,58 +304,50 @@ if __name__ == '__main__':
         prompt_encoder.train()
         for step, batch in enumerate(train_dataloader):
 
-            # ── [FIUP-NEW] 开始 FIUP 注入 ────────────────────────────────────
-            batch_size      = len(batch["context"]["input_ids"])
-            user_ids        = batch.get("user_id",      [f"u{step}_{i}" for i in range(batch_size)])
-            context_strs    = batch.get("context_str",  [""] * batch_size)
-            entity_names_batch = batch.get("entity_names", [[] for _ in range(batch_size)])
+            # ── [FIUP] 开始 FIUP 注入（仅在 --use_fiup 时启用）─────────────────
+            if args.use_fiup:
+                batch_size         = len(batch["context"]["input_ids"])
+                user_ids           = batch.get("user_id",       [f"u{step}_{i}" for i in range(batch_size)])
+                context_strs       = batch.get("context_str",   [""] * batch_size)
+                entity_names_batch = batch.get("entity_names",  [[] for _ in range(batch_size)])
 
-            # 原始文本对，由 CRSRecDataCollator 透传，用于重编码带 FIUP 的 prompt
-            prompt_context_list = batch.get("_prompt_context_list", context_strs)
-            prompt_kg_list      = batch.get("_prompt_kg_list",      [""] * batch_size)
+                prompt_context_list = batch.get("_prompt_context_list", context_strs)
+                prompt_kg_list      = batch.get("_prompt_kg_list",      [""] * batch_size)
 
-            fiup_prompts = []
-            for uid, ctx_str, attrs in zip(user_ids, context_strs, entity_names_batch):
+                fiup_prompts = []
+                for uid, ctx_str, attrs in zip(user_ids, context_strs, entity_names_batch):
+                    if uid not in fiup_managers:
+                        fiup_managers[uid] = FIUPManager(emb_dim=EMB_DIM, alpha=args.fiup_alpha)
+                    mgr = fiup_managers[uid]
 
-                # 1. 初始化或复用该用户的画像管理器
-                if uid not in fiup_managers:
-                    fiup_managers[uid] = FIUPManager(emb_dim=EMB_DIM, alpha=0.8)
-                mgr = fiup_managers[uid]
+                    e_tau = sentiment_analyzer.score(ctx_str)
 
-                # 2. 情感打分
-                e_tau = sentiment_analyzer.score(ctx_str)
+                    context_emb = encode_context_emb(
+                        ctx_str, text_tokenizer, text_encoder, device, max_length=128
+                    )
 
-                # 3. 获取真实语义向量（text_encoder [CLS]，frozen，无梯度）
-                #    替代上一版本中的 torch.zeros 占位向量
-                context_emb = encode_context_emb(
-                    ctx_str, text_tokenizer, text_encoder, device, max_length=128
-                )  # [EMB_DIM], CPU tensor
+                    mgr.update_profile(attrs, e_tau, context_emb)
+                    fiup_prompts.append(mgr.build_profile_prompt())
 
-                # 4. 更新双库（显性情感库 + 语义库）
-                mgr.update_profile(attrs, e_tau, context_emb)
+                new_prompt_encodings = [
+                    build_prompt_with_fiup(
+                        context_text=ctx,
+                        kg_text=kg_text,
+                        fiup_prompt=fp,
+                        tokenizer=text_tokenizer,
+                        max_length=args.prompt_max_length,
+                    )
+                    for ctx, kg_text, fp in zip(prompt_context_list, prompt_kg_list, fiup_prompts)
+                ]
+                batch['prompt'] = {
+                    k: torch.cat([enc[k] for enc in new_prompt_encodings], dim=0).to(device)
+                    for k in new_prompt_encodings[0].keys()
+                }
+                batch["fiup_prompts"] = fiup_prompts
+            # ── [FIUP] 结束 FIUP 注入 ────────────────────────────────────────
 
-                # 5. 生成 Prompt 文本片段，例如：
-                #    "[User Profile] Likes: Action, Thriller | Dislikes: Romance"
-                fiup_prompts.append(mgr.build_profile_prompt())
-
-            # 6. 重新编码 batch['prompt']，将 FIUP 画像插入 Context 与 KG 之间：
-            #    最终结构：[Context] <对话历史> [User Profile] Likes/Dislikes [Knowledge] <KG>
-            new_prompt_encodings = [
-                build_prompt_with_fiup(
-                    context_text=ctx,
-                    kg_text=kg_text,
-                    fiup_prompt=fp,
-                    tokenizer=text_tokenizer,
-                    max_length=args.prompt_max_length,
-                )
-                for ctx, kg_text, fp in zip(prompt_context_list, prompt_kg_list, fiup_prompts)
-            ]
-            # 每条返回 shape [1, L]，沿 batch 维拼接后移到 device
-            batch['prompt'] = {
-                k: torch.cat([enc[k] for enc in new_prompt_encodings], dim=0).to(device)
-                for k in new_prompt_encodings[0].keys()
-            }
-            batch["fiup_prompts"] = fiup_prompts  # 保留供调试 / wandb 日志
+            with torch.no_grad():
+                token_embeds = text_encoder(**batch['prompt']).last_hidden_state
             # ── [FIUP-NEW] 结束 FIUP 注入 ────────────────────────────────────
 
             with torch.no_grad():
