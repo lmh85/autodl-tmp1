@@ -1,0 +1,253 @@
+nohup: ignoring input
+The following values were not passed to `accelerate launch` and had defaults used instead:
+	`--num_processes` was set to a value of `1`
+	`--num_machines` was set to a value of `1`
+	`--mixed_precision` was set to a value of `'no'`
+	`--dynamo_backend` was set to a value of `'no'`
+To avoid this warning pass in values for each of the problematic parameters or run `accelerate config`.
+2026-04-03 20:24:01.579 | INFO     | __main__:<module>:89 - Distributed environment: NO
+Num processes: 1
+Process index: 0
+Local process index: 0
+Device: cuda
+
+Mixed precision type: no
+
+2026-04-03 20:24:01.579 | INFO     | __main__:<module>:90 - {'seed': 42, 'output_dir': None, 'debug': False, 'dataset': 'redial', 'split': 'train', 'num_workers': 0, 'context_max_length': 200, 'resp_max_length': 183, 'entity_max_length': 32, 'prompt_max_length': 200, 'tokenizer': 'microsoft/DialoGPT-small', 'ignore_pad_token_for_loss': False, 'text_tokenizer': 'roberta-base', 'model': 'microsoft/DialoGPT-small', 'max_gen_len': 50, 'text_encoder': 'roberta-base', 'prompt_encoder': '/root/autodl-tmp/UniCRS-main/output_conv/final', 'n_prefix_conv': 20, 'num_bases': 8, 'num_train_epochs': 10, 'max_train_steps': None, 'per_device_train_batch_size': 4, 'per_device_eval_batch_size': 16, 'gradient_accumulation_steps': 1, 'learning_rate': 1e-05, 'weight_decay': 0.01, 'max_grad_norm': None, 'num_warmup_steps': 10000, 'fp16': False, 'use_wandb': False, 'entity': None, 'project': None, 'name': None, 'log_all': False}
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /microsoft/DialoGPT-small/resolve/main/tokenizer_config.json (Caused by ConnectTimeoutError(<HTTPSConnection(host='huggingface.co', port=443) at 0x7f485ba6f4f0>, 'Connection to huggingface.co timed out. (connect timeout=10)'))"), '(Request ID: 65d54417-cbe5-47a9-bd5a-2e7f8d20f366)')' thrown while requesting HEAD https://huggingface.co/microsoft/DialoGPT-small/resolve/main/tokenizer_config.json
+loading file vocab.json from cache at /root/.cache/huggingface/hub/models--microsoft--DialoGPT-small/snapshots/49c537161a457d5256512f9d2d38a87d81ae0f0e/vocab.json
+loading file merges.txt from cache at /root/.cache/huggingface/hub/models--microsoft--DialoGPT-small/snapshots/49c537161a457d5256512f9d2d38a87d81ae0f0e/merges.txt
+loading file tokenizer.json from cache at None
+loading file added_tokens.json from cache at None
+loading file special_tokens_map.json from cache at None
+loading file tokenizer_config.json from cache at /root/.cache/huggingface/hub/models--microsoft--DialoGPT-small/snapshots/49c537161a457d5256512f9d2d38a87d81ae0f0e/tokenizer_config.json
+Assigning <pad> to the pad_token key of the tokenizer
+Assigning ['<movie>'] to the additional_special_tokens key of the tokenizer
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /microsoft/DialoGPT-small/resolve/main/config.json (Caused by ConnectTimeoutError(<HTTPSConnection(host='huggingface.co', port=443) at 0x7f483a79a080>, 'Connection to huggingface.co timed out. (connect timeout=10)'))"), '(Request ID: 626bb8ed-b6b4-4539-a176-12ea9267d372)')' thrown while requesting HEAD https://huggingface.co/microsoft/DialoGPT-small/resolve/main/config.json
+loading configuration file config.json from cache at /root/.cache/huggingface/hub/models--microsoft--DialoGPT-small/snapshots/49c537161a457d5256512f9d2d38a87d81ae0f0e/config.json
+Model config GPT2Config {
+  "activation_function": "gelu_new",
+  "architectures": [
+    "GPT2LMHeadModel"
+  ],
+  "attn_pdrop": 0.1,
+  "bos_token_id": 50256,
+  "embd_pdrop": 0.1,
+  "eos_token_id": 50256,
+  "initializer_range": 0.02,
+  "layer_norm_epsilon": 1e-05,
+  "model_type": "gpt2",
+  "n_ctx": 1024,
+  "n_embd": 768,
+  "n_head": 12,
+  "n_inner": null,
+  "n_layer": 12,
+  "n_positions": 1024,
+  "reorder_and_upcast_attn": false,
+  "resid_pdrop": 0.1,
+  "scale_attn_by_inverse_layer_idx": false,
+  "scale_attn_weights": true,
+  "summary_activation": null,
+  "summary_first_dropout": 0.1,
+  "summary_proj_to_labels": true,
+  "summary_type": "cls_index",
+  "summary_use_proj": true,
+  "task_specific_params": {
+    "conversational": {
+      "max_length": 1000
+    }
+  },
+  "transformers_version": "4.28.0",
+  "use_cache": true,
+  "vocab_size": 50257
+}
+
+loading weights file model.safetensors from cache at /root/.cache/huggingface/hub/models--microsoft--DialoGPT-small/snapshots/49c537161a457d5256512f9d2d38a87d81ae0f0e/model.safetensors
+Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "transformers_version": "4.28.0"
+}
+
+All model checkpoint weights were used when initializing PromptGPT2forCRS.
+
+All the weights of PromptGPT2forCRS were initialized from the model checkpoint at microsoft/DialoGPT-small.
+If your task is similar to the task the model of the checkpoint was trained on, you can already use PromptGPT2forCRS for predictions without further training.
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /microsoft/DialoGPT-small/resolve/main/generation_config.json (Caused by ConnectTimeoutError(<HTTPSConnection(host='huggingface.co', port=443) at 0x7f4838f81300>, 'Connection to huggingface.co timed out. (connect timeout=10)'))"), '(Request ID: 5be66c2d-2f49-418a-8d66-aeaf3f71107b)')' thrown while requesting HEAD https://huggingface.co/microsoft/DialoGPT-small/resolve/main/generation_config.json
+loading configuration file generation_config.json from cache at /root/.cache/huggingface/hub/models--microsoft--DialoGPT-small/snapshots/49c537161a457d5256512f9d2d38a87d81ae0f0e/generation_config.json
+Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "transformers_version": "4.28.0"
+}
+
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /roberta-base/resolve/main/tokenizer_config.json (Caused by ConnectTimeoutError(<HTTPSConnection(host='huggingface.co', port=443) at 0x7f4838f824d0>, 'Connection to huggingface.co timed out. (connect timeout=10)'))"), '(Request ID: 8eb593de-91f3-4c5c-860d-78720394ea1f)')' thrown while requesting HEAD https://huggingface.co/roberta-base/resolve/main/tokenizer_config.json
+loading configuration file config.json from cache at /root/.cache/huggingface/hub/models--roberta-base/snapshots/e2da8e2f811d1448a5b465c236feacd80ffbac7b/config.json
+Model config RobertaConfig {
+  "_name_or_path": "roberta-base",
+  "architectures": [
+    "RobertaForMaskedLM"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "bos_token_id": 0,
+  "classifier_dropout": null,
+  "eos_token_id": 2,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-05,
+  "max_position_embeddings": 514,
+  "model_type": "roberta",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 1,
+  "position_embedding_type": "absolute",
+  "transformers_version": "4.28.0",
+  "type_vocab_size": 1,
+  "use_cache": true,
+  "vocab_size": 50265
+}
+
+loading file vocab.json from cache at /root/.cache/huggingface/hub/models--roberta-base/snapshots/e2da8e2f811d1448a5b465c236feacd80ffbac7b/vocab.json
+loading file merges.txt from cache at /root/.cache/huggingface/hub/models--roberta-base/snapshots/e2da8e2f811d1448a5b465c236feacd80ffbac7b/merges.txt
+loading file tokenizer.json from cache at /root/.cache/huggingface/hub/models--roberta-base/snapshots/e2da8e2f811d1448a5b465c236feacd80ffbac7b/tokenizer.json
+loading file added_tokens.json from cache at None
+loading file special_tokens_map.json from cache at None
+loading file tokenizer_config.json from cache at /root/.cache/huggingface/hub/models--roberta-base/snapshots/e2da8e2f811d1448a5b465c236feacd80ffbac7b/tokenizer_config.json
+loading configuration file config.json from cache at /root/.cache/huggingface/hub/models--roberta-base/snapshots/e2da8e2f811d1448a5b465c236feacd80ffbac7b/config.json
+Model config RobertaConfig {
+  "_name_or_path": "roberta-base",
+  "architectures": [
+    "RobertaForMaskedLM"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "bos_token_id": 0,
+  "classifier_dropout": null,
+  "eos_token_id": 2,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-05,
+  "max_position_embeddings": 514,
+  "model_type": "roberta",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 1,
+  "position_embedding_type": "absolute",
+  "transformers_version": "4.28.0",
+  "type_vocab_size": 1,
+  "use_cache": true,
+  "vocab_size": 50265
+}
+
+Assigning ['<movie>'] to the additional_special_tokens key of the tokenizer
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /roberta-base/resolve/main/config.json (Caused by ConnectTimeoutError(<HTTPSConnection(host='huggingface.co', port=443) at 0x7f483815c2e0>, 'Connection to huggingface.co timed out. (connect timeout=10)'))"), '(Request ID: f6647bbf-df7a-4f06-8d92-d6c2c02ab086)')' thrown while requesting HEAD https://huggingface.co/roberta-base/resolve/main/config.json
+loading configuration file config.json from cache at /root/.cache/huggingface/hub/models--roberta-base/snapshots/e2da8e2f811d1448a5b465c236feacd80ffbac7b/config.json
+Model config RobertaConfig {
+  "_name_or_path": "roberta-base",
+  "architectures": [
+    "RobertaForMaskedLM"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "bos_token_id": 0,
+  "classifier_dropout": null,
+  "eos_token_id": 2,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-05,
+  "max_position_embeddings": 514,
+  "model_type": "roberta",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 1,
+  "position_embedding_type": "absolute",
+  "transformers_version": "4.28.0",
+  "type_vocab_size": 1,
+  "use_cache": true,
+  "vocab_size": 50265
+}
+
+loading weights file model.safetensors from cache at /root/.cache/huggingface/hub/models--roberta-base/snapshots/e2da8e2f811d1448a5b465c236feacd80ffbac7b/model.safetensors
+Some weights of the model checkpoint at roberta-base were not used when initializing RobertaModel: ['lm_head.bias', 'lm_head.dense.bias', 'lm_head.layer_norm.weight', 'lm_head.dense.weight', 'lm_head.layer_norm.bias']
+- This IS expected if you are initializing RobertaModel from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing RobertaModel from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+All the weights of RobertaModel were initialized from the model checkpoint at roberta-base.
+If your task is similar to the task the model of the checkpoint was trained on, you can already use RobertaModel for predictions without further training.
+/root/autodl-tmp/UniCRS-main/src/model_prompt.py:143: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  torch.load(load_path, map_location=torch.device('cpu')), strict=False
+['edge_index', 'edge_type'] []
+  0%|          | 0/56355 [00:00<?, ?it/s]/root/miniconda3/envs/fiup/lib/python3.10/site-packages/transformers/tokenization_utils_base.py:3596: UserWarning: `as_target_tokenizer` is deprecated and will be removed in v5 of Transformers. You can tokenize your labels by using the argument `text_target` of the regular `__call__` method (either in the same call as your input texts if you use the same keyword arguments, or in a separate call.
+  warnings.warn(
+  0%|          | 184/56355 [00:00<00:30, 1834.81it/s]  1%|          | 379/56355 [00:00<00:29, 1897.97it/s]Token indices sequence length is longer than the specified maximum sequence length for this model (546 > 512). Running this sequence through the model will result in indexing errors
+  1%|          | 569/56355 [00:00<00:31, 1770.74it/s]  1%|▏         | 755/56355 [00:00<00:30, 1798.45it/s]  2%|▏         | 936/56355 [00:00<00:31, 1787.32it/s]  2%|▏         | 1151/56355 [00:00<00:28, 1906.43it/s]  2%|▏         | 1354/56355 [00:00<00:28, 1945.92it/s]  3%|▎         | 1575/56355 [00:00<00:27, 2028.36it/s]  3%|▎         | 1779/56355 [00:00<00:26, 2027.27it/s]  4%|▎         | 1983/56355 [00:01<00:27, 1943.39it/s]  4%|▍         | 2184/56355 [00:01<00:27, 1956.99it/s]  4%|▍         | 2396/56355 [00:01<00:26, 2005.11it/s]  5%|▍         | 2598/56355 [00:01<00:27, 1931.64it/s]  5%|▍         | 2793/56355 [00:01<00:27, 1928.70it/s]  5%|▌         | 3001/56355 [00:01<00:27, 1972.12it/s]  6%|▌         | 3199/56355 [00:01<00:28, 1883.38it/s]  6%|▌         | 3412/56355 [00:01<00:27, 1952.04it/s]  6%|▋         | 3609/56355 [00:01<00:27, 1909.82it/s]  7%|▋         | 3801/56355 [00:01<00:27, 1889.79it/s]  7%|▋         | 4000/56355 [00:02<00:27, 1915.94it/s]  7%|▋         | 4193/56355 [00:02<00:27, 1909.42it/s]  8%|▊         | 4390/56355 [00:02<00:26, 1926.68it/s]  8%|▊         | 4587/56355 [00:02<00:26, 1935.16it/s]  8%|▊         | 4781/56355 [00:02<00:27, 1906.74it/s]  9%|▉         | 4972/56355 [00:02<00:26, 1905.64it/s]  9%|▉         | 5172/56355 [00:02<00:26, 1932.51it/s] 10%|▉         | 5366/56355 [00:02<00:26, 1931.74it/s] 10%|▉         | 5561/56355 [00:02<00:26, 1934.58it/s] 10%|█         | 5755/56355 [00:02<00:26, 1915.68it/s] 11%|█         | 5965/56355 [00:03<00:25, 1968.22it/s] 11%|█         | 6168/56355 [00:03<00:25, 1983.36it/s] 11%|█▏        | 6367/56355 [00:03<00:25, 1937.65it/s] 12%|█▏        | 6562/56355 [00:03<00:25, 1921.62it/s] 12%|█▏        | 6765/56355 [00:03<00:25, 1951.84it/s] 12%|█▏        | 6961/56355 [00:03<00:25, 1921.51it/s] 13%|█▎        | 7179/56355 [00:03<00:24, 1992.04it/s] 13%|█▎        | 7380/56355 [00:03<00:24, 1995.35it/s] 13%|█▎        | 7580/56355 [00:03<00:25, 1921.80it/s] 14%|█▍        | 7777/56355 [00:04<00:25, 1930.32it/s] 14%|█▍        | 7971/56355 [00:04<00:25, 1896.56it/s] 14%|█▍        | 8162/56355 [00:04<00:26, 1851.29it/s] 15%|█▍        | 8349/56355 [00:04<00:25, 1856.40it/s] 15%|█▌        | 8535/56355 [00:04<00:26, 1833.58it/s] 15%|█▌        | 8719/56355 [00:04<00:26, 1800.82it/s] 16%|█▌        | 8942/56355 [00:04<00:24, 1920.60it/s] 16%|█▌        | 9153/56355 [00:04<00:23, 1971.95it/s] 17%|█▋        | 9351/56355 [00:04<00:24, 1958.37it/s] 17%|█▋        | 9557/56355 [00:04<00:23, 1987.19it/s] 17%|█▋        | 9756/56355 [00:05<00:24, 1908.55it/s] 18%|█▊        | 9951/56355 [00:05<00:24, 1917.18it/s] 18%|█▊        | 10163/56355 [00:05<00:23, 1973.34it/s] 18%|█▊        | 10361/56355 [00:05<00:23, 1920.33it/s] 19%|█▊        | 10554/56355 [00:05<00:24, 1841.46it/s] 19%|█▉        | 10740/56355 [00:05<00:25, 1813.63it/s] 19%|█▉        | 10926/56355 [00:05<00:24, 1821.41it/s] 20%|█▉        | 11114/56355 [00:05<00:24, 1837.46it/s] 20%|██        | 11321/56355 [00:05<00:23, 1904.78it/s] 20%|██        | 11521/56355 [00:06<00:23, 1932.20it/s] 21%|██        | 11715/56355 [00:06<00:23, 1899.10it/s] 21%|██        | 11906/56355 [00:06<00:24, 1809.50it/s] 21%|██▏       | 12088/56355 [00:06<00:26, 1648.29it/s] 22%|██▏       | 12256/56355 [00:06<00:27, 1591.42it/s] 22%|██▏       | 12419/56355 [00:06<00:27, 1601.65it/s] 22%|██▏       | 12603/56355 [00:06<00:26, 1665.39it/s] 23%|██▎       | 12804/56355 [00:06<00:24, 1745.34it/s] 23%|██▎       | 13004/56355 [00:06<00:23, 1814.74it/s] 23%|██▎       | 13187/56355 [00:06<00:23, 1816.48it/s] 24%|██▎       | 13377/56355 [00:07<00:23, 1839.44it/s] 24%|██▍       | 13562/56355 [00:07<00:23, 1838.67it/s] 24%|██▍       | 13747/56355 [00:07<00:23, 1789.22it/s] 25%|██▍       | 13927/56355 [00:07<00:24, 1757.22it/s] 25%|██▌       | 14117/56355 [00:07<00:23, 1795.94it/s] 25%|██▌       | 14298/56355 [00:07<00:23, 1773.12it/s] 26%|██▌       | 14476/56355 [00:07<00:24, 1732.57it/s] 26%|██▌       | 14650/56355 [00:07<00:24, 1723.66it/s] 26%|██▋       | 14827/56355 [00:07<00:23, 1733.42it/s] 27%|██▋       | 15014/56355 [00:08<00:23, 1772.17it/s] 27%|██▋       | 15192/56355 [00:08<00:24, 1714.08it/s] 27%|██▋       | 15369/56355 [00:08<00:23, 1726.01it/s] 28%|██▊       | 15542/56355 [00:08<00:23, 1709.56it/s] 28%|██▊       | 15714/56355 [00:08<00:23, 1699.05it/s] 28%|██▊       | 15890/56355 [00:08<00:23, 1716.00it/s] 29%|██▊       | 16077/56355 [00:08<00:22, 1760.37it/s] 29%|██▉       | 16281/56355 [00:08<00:21, 1842.15it/s] 29%|██▉       | 16466/56355 [00:08<00:21, 1835.35it/s] 30%|██▉       | 16655/56355 [00:08<00:21, 1849.48it/s] 30%|██▉       | 16841/56355 [00:09<00:21, 1830.58it/s] 30%|███       | 17031/56355 [00:09<00:21, 1850.85it/s] 31%|███       | 17217/56355 [00:09<00:21, 1817.95it/s] 31%|███       | 17399/56355 [00:09<00:21, 1784.35it/s] 31%|███       | 17578/56355 [00:09<00:22, 1699.41it/s]Token indices sequence length is longer than the specified maximum sequence length for this model (1057 > 1024). Running this sequence through the model will result in indexing errors
+ 31%|███▏      | 17749/56355 [00:09<00:29, 1323.73it/s] 32%|███▏      | 17936/56355 [00:09<00:26, 1451.40it/s] 32%|███▏      | 18123/56355 [00:09<00:24, 1555.41it/s] 32%|███▏      | 18299/56355 [00:09<00:23, 1609.46it/s] 33%|███▎      | 18519/56355 [00:10<00:21, 1767.98it/s] 33%|███▎      | 18712/56355 [00:10<00:20, 1812.99it/s] 34%|███▎      | 18899/56355 [00:10<00:20, 1810.83it/s] 34%|███▍      | 19099/56355 [00:10<00:20, 1862.22it/s] 34%|███▍      | 19288/56355 [00:10<00:21, 1753.43it/s] 35%|███▍      | 19487/56355 [00:10<00:20, 1817.39it/s] 35%|███▍      | 19672/56355 [00:10<00:21, 1714.03it/s] 35%|███▌      | 19861/56355 [00:10<00:20, 1762.56it/s] 36%|███▌      | 20040/56355 [00:10<00:21, 1713.30it/s] 36%|███▌      | 20214/56355 [00:11<00:21, 1697.33it/s] 36%|███▌      | 20385/56355 [00:11<00:21, 1697.21it/s] 36%|███▋      | 20556/56355 [00:11<00:23, 1495.56it/s] 37%|███▋      | 20711/56355 [00:11<00:26, 1366.18it/s] 37%|███▋      | 20853/56355 [00:11<00:28, 1266.68it/s] 37%|███▋      | 20984/56355 [00:11<00:29, 1207.24it/s] 37%|███▋      | 21108/56355 [00:11<00:29, 1193.25it/s] 38%|███▊      | 21229/56355 [00:11<00:30, 1161.03it/s] 38%|███▊      | 21347/56355 [00:12<00:30, 1137.81it/s] 38%|███▊      | 21462/56355 [00:12<00:30, 1134.45it/s] 38%|███▊      | 21578/56355 [00:12<00:30, 1141.04it/s] 38%|███▊      | 21696/56355 [00:12<00:30, 1151.25it/s] 39%|███▊      | 21812/56355 [00:12<00:32, 1069.18it/s] 39%|███▉      | 21930/56355 [00:12<00:31, 1099.06it/s] 39%|███▉      | 22041/56355 [00:12<00:53, 646.49it/s]  39%|███▉      | 22162/56355 [00:13<00:45, 752.21it/s] 40%|███▉      | 22270/56355 [00:13<00:41, 820.33it/s] 40%|███▉      | 22391/56355 [00:13<00:37, 910.60it/s] 40%|████      | 22554/56355 [00:13<00:30, 1090.63it/s] 40%|████      | 22737/56355 [00:13<00:26, 1283.78it/s] 41%|████      | 22913/56355 [00:13<00:23, 1413.31it/s] 41%|████      | 23085/56355 [00:13<00:22, 1496.31it/s] 41%|████▏     | 23265/56355 [00:13<00:20, 1578.81it/s] 42%|████▏     | 23444/56355 [00:13<00:20, 1637.54it/s] 42%|████▏     | 23612/56355 [00:13<00:20, 1630.71it/s] 42%|████▏     | 23808/56355 [00:14<00:18, 1726.46it/s] 43%|████▎     | 23999/56355 [00:14<00:18, 1778.32it/s] 43%|████▎     | 24179/56355 [00:14<00:18, 1767.83it/s] 43%|████▎     | 24357/56355 [00:14<00:18, 1684.62it/s] 44%|████▎     | 24531/56355 [00:14<00:18, 1698.60it/s] 44%|████▍     | 24706/56355 [00:14<00:18, 1713.43it/s] 44%|████▍     | 24889/56355 [00:14<00:18, 1744.97it/s] 45%|████▍     | 25082/56355 [00:14<00:17, 1797.99it/s] 45%|████▍     | 25263/56355 [00:14<00:17, 1756.14it/s] 45%|████▌     | 25441/56355 [00:14<00:17, 1760.68it/s] 45%|████▌     | 25626/56355 [00:15<00:17, 1777.35it/s] 46%|████▌     | 25805/56355 [00:15<00:17, 1778.20it/s] 46%|████▌     | 25984/56355 [00:15<00:17, 1758.42it/s] 46%|████▋     | 26172/56355 [00:15<00:16, 1791.41it/s] 47%|████▋     | 26352/56355 [00:15<00:16, 1787.22it/s] 47%|████▋     | 26531/56355 [00:15<00:16, 1778.98it/s] 47%|████▋     | 26709/56355 [00:15<00:16, 1765.83it/s] 48%|████▊     | 26886/56355 [00:15<00:16, 1765.49it/s] 48%|████▊     | 27063/56355 [00:15<00:16, 1746.56it/s] 48%|████▊     | 27260/56355 [00:15<00:16, 1810.63it/s] 49%|████▊     | 27442/56355 [00:16<00:16, 1769.94it/s] 49%|████▉     | 27620/56355 [00:16<00:16, 1768.19it/s] 49%|████▉     | 27803/56355 [00:16<00:16, 1783.76it/s] 50%|████▉     | 27982/56355 [00:16<00:16, 1771.03it/s] 50%|████▉     | 28160/56355 [00:16<00:15, 1771.46it/s] 50%|█████     | 28363/56355 [00:16<00:15, 1847.94it/s] 51%|█████     | 28559/56355 [00:16<00:14, 1879.36it/s] 51%|█████     | 28748/56355 [00:16<00:14, 1872.06it/s] 51%|█████▏    | 28937/56355 [00:16<00:14, 1872.26it/s] 52%|█████▏    | 29125/56355 [00:16<00:15, 1772.33it/s] 52%|█████▏    | 29309/56355 [00:17<00:15, 1788.38it/s] 52%|█████▏    | 29489/56355 [00:17<00:15, 1780.71it/s] 53%|█████▎    | 29668/56355 [00:17<00:14, 1781.52it/s] 53%|█████▎    | 29865/56355 [00:17<00:14, 1836.63it/s] 53%|█████▎    | 30050/56355 [00:17<00:14, 1816.20it/s] 54%|█████▎    | 30244/56355 [00:17<00:14, 1849.27it/s] 54%|█████▍    | 30430/56355 [00:17<00:14, 1834.52it/s] 54%|█████▍    | 30614/56355 [00:17<00:14, 1807.02it/s] 55%|█████▍    | 30797/56355 [00:17<00:14, 1813.62it/s] 55%|█████▍    | 30981/56355 [00:18<00:13, 1821.33it/s] 55%|█████▌    | 31164/56355 [00:18<00:14, 1766.57it/s] 56%|█████▌    | 31349/56355 [00:18<00:13, 1787.22it/s] 56%|█████▌    | 31529/56355 [00:18<00:14, 1711.35it/s] 56%|█████▋    | 31709/56355 [00:18<00:14, 1735.49it/s] 57%|█████▋    | 31884/56355 [00:18<00:14, 1715.02it/s] 57%|█████▋    | 32059/56355 [00:18<00:14, 1724.92it/s] 57%|█████▋    | 32232/56355 [00:18<00:14, 1708.06it/s] 57%|█████▋    | 32404/56355 [00:18<00:14, 1701.76it/s] 58%|█████▊    | 32576/56355 [00:18<00:13, 1704.05it/s] 58%|█████▊    | 32747/56355 [00:19<00:14, 1656.96it/s] 58%|█████▊    | 32914/56355 [00:19<00:14, 1659.75it/s] 59%|█████▊    | 33081/56355 [00:19<00:14, 1653.74it/s] 59%|█████▉    | 33262/56355 [00:19<00:13, 1693.66it/s] 59%|█████▉    | 33432/56355 [00:19<00:13, 1694.95it/s] 60%|█████▉    | 33621/56355 [00:19<00:12, 1750.00it/s] 60%|█████▉    | 33798/56355 [00:19<00:12, 1752.28it/s] 60%|██████    | 33988/56355 [00:19<00:12, 1794.79it/s] 61%|██████    | 34170/56355 [00:19<00:12, 1801.39it/s] 61%|██████    | 34351/56355 [00:19<00:12, 1787.81it/s] 61%|██████▏   | 34530/56355 [00:20<00:12, 1692.50it/s] 62%|██████▏   | 34705/56355 [00:20<00:12, 1706.06it/s] 62%|██████▏   | 34881/56355 [00:20<00:12, 1721.50it/s] 62%|██████▏   | 35088/56355 [00:20<00:11, 1823.12it/s] 63%|██████▎   | 35271/56355 [00:20<00:11, 1802.41it/s] 63%|██████▎   | 35458/56355 [00:20<00:11, 1817.39it/s] 63%|██████▎   | 35641/56355 [00:20<00:11, 1771.99it/s] 64%|██████▎   | 35842/56355 [00:20<00:11, 1840.39it/s] 64%|██████▍   | 36027/56355 [00:20<00:11, 1787.06it/s] 64%|██████▍   | 36207/56355 [00:21<00:11, 1691.83it/s] 65%|██████▍   | 36399/56355 [00:21<00:11, 1754.50it/s] 65%|██████▍   | 36576/56355 [00:21<00:11, 1727.18it/s] 65%|██████▌   | 36778/56355 [00:21<00:10, 1809.21it/s] 66%|██████▌   | 36965/56355 [00:21<00:10, 1822.62it/s] 66%|██████▌   | 37158/56355 [00:21<00:10, 1851.45it/s] 66%|██████▋   | 37344/56355 [00:21<00:10, 1786.49it/s] 67%|██████▋   | 37524/56355 [00:21<00:10, 1736.58it/s] 67%|██████▋   | 37712/56355 [00:21<00:10, 1774.53it/s] 67%|██████▋   | 37891/56355 [00:21<00:10, 1714.70it/s] 68%|██████▊   | 38071/56355 [00:22<00:10, 1738.52it/s] 68%|██████▊   | 38246/56355 [00:22<00:10, 1698.06it/s] 68%|██████▊   | 38422/56355 [00:22<00:10, 1715.57it/s] 68%|██████▊   | 38595/56355 [00:22<00:10, 1661.02it/s] 69%|██████▉   | 38789/56355 [00:22<00:10, 1740.88it/s] 69%|██████▉   | 38969/56355 [00:22<00:09, 1753.88it/s] 70%|██████▉   | 39167/56355 [00:22<00:09, 1816.94it/s] 70%|██████▉   | 39380/56355 [00:22<00:08, 1903.92it/s] 70%|███████   | 39573/56355 [00:22<00:08, 1909.80it/s] 71%|███████   | 39765/56355 [00:23<00:08, 1857.14it/s] 71%|███████   | 39952/56355 [00:23<00:09, 1812.61it/s] 71%|███████   | 40134/56355 [00:23<00:09, 1772.35it/s] 72%|███████▏  | 40312/56355 [00:23<00:09, 1682.55it/s] 72%|███████▏  | 40482/56355 [00:23<00:09, 1642.07it/s] 72%|███████▏  | 40647/56355 [00:23<00:10, 1543.80it/s] 72%|███████▏  | 40826/56355 [00:23<00:09, 1610.16it/s] 73%|███████▎  | 40997/56355 [00:23<00:09, 1637.11it/s] 73%|███████▎  | 41162/56355 [00:23<00:09, 1591.26it/s] 73%|███████▎  | 41323/56355 [00:24<00:09, 1587.40it/s] 74%|███████▎  | 41490/56355 [00:24<00:09, 1608.81it/s] 74%|███████▍  | 41652/56355 [00:24<00:09, 1602.69it/s] 74%|███████▍  | 41813/56355 [00:24<00:09, 1570.43it/s] 74%|███████▍  | 41983/56355 [00:24<00:08, 1606.39it/s] 75%|███████▍  | 42160/56355 [00:24<00:08, 1654.23it/s] 75%|███████▌  | 42326/56355 [00:24<00:08, 1565.52it/s] 75%|███████▌  | 42491/56355 [00:24<00:08, 1587.01it/s] 76%|███████▌  | 42670/56355 [00:24<00:08, 1638.81it/s] 76%|███████▌  | 42835/56355 [00:24<00:08, 1628.31it/s] 76%|███████▋  | 43004/56355 [00:25<00:08, 1645.43it/s] 77%|███████▋  | 43169/56355 [00:25<00:08, 1578.05it/s] 77%|███████▋  | 43338/56355 [00:25<00:08, 1609.56it/s] 77%|███████▋  | 43508/56355 [00:25<00:07, 1632.50it/s] 77%|███████▋  | 43672/56355 [00:25<00:07, 1612.99it/s] 78%|███████▊  | 43834/56355 [00:25<00:08, 1558.35it/s] 78%|███████▊  | 44013/56355 [00:25<00:07, 1624.56it/s] 78%|███████▊  | 44177/56355 [00:25<00:07, 1594.48it/s] 79%|███████▊  | 44342/56355 [00:25<00:07, 1606.38it/s] 79%|███████▉  | 44522/56355 [00:25<00:07, 1659.94it/s] 79%|███████▉  | 44689/56355 [00:26<00:07, 1662.54it/s] 80%|███████▉  | 44859/56355 [00:26<00:06, 1671.53it/s] 80%|███████▉  | 45027/56355 [00:26<00:07, 1606.16it/s] 80%|████████  | 45210/56355 [00:26<00:06, 1669.14it/s] 81%|████████  | 45378/56355 [00:26<00:06, 1666.79it/s] 81%|████████  | 45546/56355 [00:26<00:06, 1664.09it/s] 81%|████████  | 45716/56355 [00:26<00:06, 1673.81it/s] 81%|████████▏ | 45884/56355 [00:26<00:06, 1667.06it/s] 82%|████████▏ | 46051/56355 [00:26<00:06, 1619.83it/s] 82%|████████▏ | 46214/56355 [00:27<00:06, 1619.13it/s] 82%|████████▏ | 46377/56355 [00:27<00:06, 1606.10it/s] 83%|████████▎ | 46538/56355 [00:27<00:06, 1568.69it/s] 83%|████████▎ | 46706/56355 [00:27<00:06, 1600.05it/s] 83%|████████▎ | 46876/56355 [00:27<00:05, 1628.61it/s] 83%|████████▎ | 47040/56355 [00:27<00:05, 1595.06it/s] 84%|████████▍ | 47200/56355 [00:27<00:05, 1576.25it/s] 84%|████████▍ | 47358/56355 [00:27<00:05, 1572.09it/s] 84%|████████▍ | 47516/56355 [00:27<00:05, 1553.44it/s] 85%|████████▍ | 47675/56355 [00:27<00:05, 1562.90it/s] 85%|████████▍ | 47843/56355 [00:28<00:05, 1596.05it/s] 85%|████████▌ | 48027/56355 [00:28<00:05, 1664.44it/s] 86%|████████▌ | 48194/56355 [00:28<00:05, 1624.09it/s] 86%|████████▌ | 48357/56355 [00:28<00:04, 1613.86it/s] 86%|████████▌ | 48521/56355 [00:28<00:04, 1620.62it/s] 86%|████████▋ | 48698/56355 [00:28<00:04, 1663.96it/s] 87%|████████▋ | 48865/56355 [00:28<00:04, 1656.37it/s] 87%|████████▋ | 49031/56355 [00:28<00:04, 1634.18it/s] 87%|████████▋ | 49195/56355 [00:28<00:04, 1632.79it/s] 88%|████████▊ | 49359/56355 [00:29<00:08, 811.22it/s]  88%|████████▊ | 49492/56355 [00:29<00:07, 900.85it/s] 88%|████████▊ | 49669/56355 [00:29<00:06, 1072.52it/s] 88%|████████▊ | 49823/56355 [00:29<00:05, 1175.61it/s] 89%|████████▊ | 49975/56355 [00:29<00:05, 1256.04it/s] 89%|████████▉ | 50137/56355 [00:29<00:04, 1345.77it/s] 89%|████████▉ | 50305/56355 [00:29<00:04, 1434.61it/s] 90%|████████▉ | 50462/56355 [00:30<00:04, 1403.90it/s] 90%|████████▉ | 50633/56355 [00:30<00:03, 1486.35it/s] 90%|█████████ | 50798/56355 [00:30<00:03, 1530.19it/s] 90%|█████████ | 50957/56355 [00:30<00:03, 1505.31it/s] 91%|█████████ | 51118/56355 [00:30<00:03, 1534.34it/s] 91%|█████████ | 51275/56355 [00:30<00:03, 1490.29it/s] 91%|█████████▏| 51428/56355 [00:30<00:03, 1498.39it/s] 92%|█████████▏| 51591/56355 [00:30<00:03, 1533.43it/s] 92%|█████████▏| 51746/56355 [00:30<00:03, 1534.33it/s] 92%|█████████▏| 51901/56355 [00:30<00:02, 1527.53it/s] 92%|█████████▏| 52059/56355 [00:31<00:02, 1540.88it/s] 93%|█████████▎| 52214/56355 [00:31<00:02, 1534.50it/s] 93%|█████████▎| 52381/56355 [00:31<00:02, 1573.06it/s] 93%|█████████▎| 52546/56355 [00:31<00:02, 1595.23it/s] 94%|█████████▎| 52706/56355 [00:31<00:02, 1591.86it/s] 94%|█████████▍| 52866/56355 [00:31<00:02, 1579.60it/s] 94%|█████████▍| 53025/56355 [00:31<00:02, 1531.55it/s] 94%|█████████▍| 53185/56355 [00:31<00:02, 1551.27it/s] 95%|█████████▍| 53345/56355 [00:31<00:01, 1561.83it/s] 95%|█████████▍| 53521/56355 [00:31<00:01, 1616.46it/s] 95%|█████████▌| 53683/56355 [00:32<00:01, 1593.80it/s] 96%|█████████▌| 53843/56355 [00:32<00:01, 1593.26it/s] 96%|█████████▌| 54003/56355 [00:32<00:01, 1592.43it/s] 96%|█████████▌| 54163/56355 [00:32<00:01, 1563.41it/s] 96%|█████████▋| 54326/56355 [00:32<00:01, 1582.73it/s] 97%|█████████▋| 54485/56355 [00:32<00:01, 1554.32it/s] 97%|█████████▋| 54641/56355 [00:32<00:01, 1524.63it/s] 97%|█████████▋| 54800/56355 [00:32<00:01, 1543.09it/s] 98%|█████████▊| 54958/56355 [00:32<00:00, 1552.25it/s] 98%|█████████▊| 55114/56355 [00:33<00:00, 1492.86it/s] 98%|█████████▊| 55278/56355 [00:33<00:00, 1531.81it/s] 98%|█████████▊| 55432/56355 [00:33<00:00, 1493.19it/s] 99%|█████████▊| 55584/56355 [00:33<00:00, 1500.55it/s] 99%|█████████▉| 55757/56355 [00:33<00:00, 1567.19it/s] 99%|█████████▉| 55925/56355 [00:33<00:00, 1598.52it/s]100%|█████████▉| 56086/56355 [00:33<00:00, 1564.14it/s]100%|█████████▉| 56260/56355 [00:33<00:00, 1614.21it/s]100%|██████████| 56355/56355 [00:33<00:00, 1667.86it/s]
+  0%|          | 0/3173 [00:00<?, ?it/s]You're using a GPT2TokenizerFast tokenizer. Please note that with a fast tokenizer, using the `__call__` method is faster than using a method to encode the text followed by a call to the `pad` method to get a padded encoding.
+/root/miniconda3/envs/fiup/lib/python3.10/site-packages/transformers/tokenization_utils_base.py:2372: UserWarning: `max_length` is ignored when `padding`=`True` and there is no truncation strategy. To pad to max length, use `padding='max_length'`.
+  warnings.warn(
+You're using a RobertaTokenizerFast tokenizer. Please note that with a fast tokenizer, using the `__call__` method is faster than using a method to encode the text followed by a call to the `pad` method to get a padded encoding.
+Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+/root/miniconda3/envs/fiup/lib/python3.10/site-packages/transformers/generation/utils.py:1219: UserWarning: You have modified the pretrained model configuration to control generation. This is a deprecated strategy to control generation and will be removed soon, in a future version. Please use a generation configuration file (see https://huggingface.co/docs/transformers/main_classes/text_generation)
+  warnings.warn(
+  0%|          | 0/3173 [00:00<?, ?it/s]
+Traceback (most recent call last):
+  File "/root/autodl-tmp/UniCRS-main/src/infer_conv.py", line 182, in <module>
+    gen_seqs = accelerator.unwrap_model(model).generate(
+  File "/root/miniconda3/envs/fiup/lib/python3.10/site-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+    return func(*args, **kwargs)
+  File "/root/miniconda3/envs/fiup/lib/python3.10/site-packages/transformers/generation/utils.py", line 1437, in generate
+    return self.greedy_search(
+  File "/root/miniconda3/envs/fiup/lib/python3.10/site-packages/transformers/generation/utils.py", line 2248, in greedy_search
+    outputs = self(
+  File "/root/miniconda3/envs/fiup/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/root/miniconda3/envs/fiup/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/root/autodl-tmp/UniCRS-main/src/model_gpt2.py", line 638, in forward
+    transformer_outputs = self.transformer(
+  File "/root/miniconda3/envs/fiup/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/root/miniconda3/envs/fiup/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/root/autodl-tmp/UniCRS-main/src/model_gpt2.py", line 484, in forward
+    outputs = block(
+  File "/root/miniconda3/envs/fiup/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/root/miniconda3/envs/fiup/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/root/autodl-tmp/UniCRS-main/src/model_gpt2.py", line 219, in forward
+    attn_outputs = self.attn(
+  File "/root/miniconda3/envs/fiup/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/root/miniconda3/envs/fiup/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/root/autodl-tmp/UniCRS-main/src/model_gpt2.py", line 174, in forward
+    attn_output, attn_weights = self._attn(
+  File "/root/autodl-tmp/UniCRS-main/src/model_gpt2.py", line 88, in _attn
+    attn_weights = attn_weights / (float(value.size(-1)) ** 0.5)
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 62.00 MiB. GPU 0 has a total capacity of 23.52 GiB of which 33.38 MiB is free. Process 14969 has 20.14 GiB memory in use. Including non-PyTorch memory, this process has 3.33 GiB memory in use. Of the allocated memory 2.63 GiB is allocated by PyTorch, and 299.61 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+Traceback (most recent call last):
+  File "/root/miniconda3/envs/fiup/bin/accelerate", line 6, in <module>
+    sys.exit(main())
+  File "/root/miniconda3/envs/fiup/lib/python3.10/site-packages/accelerate/commands/accelerate_cli.py", line 50, in main
+    args.func(args)
+  File "/root/miniconda3/envs/fiup/lib/python3.10/site-packages/accelerate/commands/launch.py", line 1405, in launch_command
+    simple_launcher(args)
+  File "/root/miniconda3/envs/fiup/lib/python3.10/site-packages/accelerate/commands/launch.py", line 993, in simple_launcher
+    raise subprocess.CalledProcessError(returncode=process.returncode, cmd=cmd)
+subprocess.CalledProcessError: Command '['/root/miniconda3/envs/fiup/bin/python3.10', 'infer_conv.py', '--dataset', 'redial', '--split', 'train', '--tokenizer', 'microsoft/DialoGPT-small', '--model', 'microsoft/DialoGPT-small', '--text_tokenizer', 'roberta-base', '--text_encoder', 'roberta-base', '--n_prefix_conv', '20', '--prompt_encoder', '/root/autodl-tmp/UniCRS-main/output_conv/final', '--per_device_eval_batch_size', '16', '--context_max_length', '200', '--resp_max_length', '183', '--prompt_max_length', '200', '--entity_max_length', '32']' returned non-zero exit status 1.

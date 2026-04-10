@@ -6227,7 +6227,7 @@
 {"pred": "System: You're welcome! Have a great day!", "label": "System: Have a good weekend"}
 {"pred": "System: I haven't seen that one. I have seen <movie>", "label": "System: That's a great one. I remember seeing that when I was a teenager. How about another old one like <movie>? The original was the best in my opinion."}
 {"pred": "System: I haven't seen that one.", "label": "System: Yes, those are great."}
-{"pred": "System: I think you would like <movie>", "label": "System: How about <movie> if you are a <movie> fan?"}
+{"pred": "System: I haven't seen that one.", "label": "System: How about <movie> if you are a <movie> fan?"}
 {"pred": "System: I haven't seen that one.", "label": "System: It's about a mutated baby. I remember it scared me when I was a kid but haven't seen it in years. That is a great movie. You have good taste!"}
 {"pred": "System: You're welcome. Have a good day!", "label": "System: I hope you have fun watching some movies! Goodbye!"}
 {"pred": "System: Hi! What kind of movies do you like?", "label": "System: Hi what kind of movies do you like? I just saw <movie>"}
@@ -6462,3 +6462,626 @@
 {"pred": "System: <movie> is a good one", "label": "System: Yes I almost cried lol <movie> is pretty food Good*"}
 {"pred": "System: <movie> is a good one too", "label": "System: If you like drama, I would say <movie>"}
 {"pred": "System: You too!", "label": "System: Has action as well You too bye!"}
+{"pred": "System: What kind of movies do you like?", "label": "System: I’m good thanks for asking"}
+{"pred": "System: Have you seen <movie>?", "label": "System: Okay I love romantic! So I would suggest watching <movie> with Channing Tatum so good! Also <movie>"}
+{"pred": "System: <movie> is another good one", "label": "System: <movie> with Adam Sandler is pretty good too! If you have not seen it"}
+{"pred": "System: <movie> is another good one", "label": "System: And <movie>! Wow you should definately watch all of them then!"}
+{"pred": "System: You too!", "label": "System: Yes a classic! Your welcome"}
+{"pred": "System: I have not seen that one. Have you seen <movie>?", "label": "System: What kind of movies would you like me to suggest?! Yes I do! My favorite is <movie> Also <movie>"}
+{"pred": "System: <movie> was a good one", "label": "System: Have you seen <movie>?! Or <movie>"}
+{"pred": "System: I haven't seen that one. I have seen <movie>", "label": "System: Omg I love love <movie> so good"}
+{"pred": "System: You're welcome!", "label": "System: Anytime bye!"}
+{"pred": "System: <movie> is a great movie", "label": "System: So like action?!"}
+{"pred": "System: I like <movie>", "label": "System: Gotcha! <movie> was really good! Have you seen it Or <movie>"}
+{"pred": "System: It's a good one!", "label": "System: A married couple happily together but everything shifted when the wife got in a car accident and wasn’t in a Coma for a long time, after she wasn’t out of coma she was not the same"}
+{"pred": "System: I think you will have a great day!", "label": "System: Have you seen <movie>"}
+{"pred": "System: I think it was a good movie.", "label": "System: Or <movie>?! Those are climbing movies <movie> was pretty good"}
+{"pred": "System: I think you will have to check it out <movie>", "label": "System: <movie> is pretty cool have you seen it"}
+{"pred": "System: You too!", "label": "System: Yeah no problem! Bye!"}
+{"pred": "System: what kind of movies do you like?", "label": "System: no prob"}
+{"pred": "System: what are you looking for?", "label": "System: How about <movie> I'm actually watching it right now. haha"}
+{"pred": "System: <movie> is a good one", "label": "System: After this is over I was thinking of checking out <movie> If you are into comic book movies it is great."}
+{"pred": "System: <movie> is a good one.", "label": "System: If those aren't up your ally <movie> thats another good one"}
+{"pred": "System: ok, I hope you like it.", "label": "System: and if you like something spooky. <movie>"}
+{"pred": "System: ok, you too bye", "label": "System: no problem. Goodbye"}
+{"pred": "System: Hi, what kind of movies do you like?", "label": "System: <movie>"}
+{"pred": "System: <movie>", "label": "System: Neither do I usually, but this film has some humor to it."}
+{"pred": "System: <movie> is a good one.", "label": "System: The actions scenes are a majority of the movie, but it has nice graphics. Do you like mythology? I would rate this movie an 8 out of 10."}
+{"pred": "System: <movie> is a good one.", "label": "System: <movie> is a seriously hilarious. it is extremely funny!"}
+{"pred": "System: <movie> is a good one.", "label": "System: Will Ferrell and Mark Walburgh really compliment each other. I laughed out loud throughout the whole movie. I don't think you will regret watching it all the way through."}
+{"pred": "System: <movie> is a good one.", "label": "System: Yes, otherwise I would be wasting your time."}
+{"pred": "System: I think you'll enjoy it. Have a good day!", "label": "System: <movie> is also worth checking out. That is actually the movie with Mark."}
+{"pred": "System: It is a good movie. It's about a girl who goes to the girl who gets kidnapped in the movie. She dies in the girl dies in a girl in the first girl who keeps her daughter dies in his daughter dies and she dies in theaters", "label": "System: It is about two cops. Will's character used to be a pimp. Many good laughs to be had. I hope you check them out. <movie> is good for Christmas time, but it is a bit corny. The new <movie> is way better than I thought."}
+{"pred": "System: I think you would like <movie>.", "label": "System: Jack Black and the Rock play the roles of the avatars in the game."}
+{"pred": "System: I think you will enjoy it.", "label": "System: There is a new one that came out last year. It is much more funny than the original."}
+{"pred": "System: I think you would like <movie>.", "label": "System: <movie> was alright. <movie> is another classic he is in."}
+{"pred": "System: I think you will check it out.", "label": "System: I just don't like the Nascar theme much."}
+{"pred": "System: You are welcome.", "label": "System: That sounds great enjoy it with friends."}
+{"pred": "System: You too.", "label": "System: You also!"}
+{"pred": "System: Hi! What kind of movies do you like?", "label": "System: Hey there, how are you doing?!"}
+{"pred": "System: Have you seen <movie>?", "label": "System: I'm alive and kicking"}
+{"pred": "System: Have you seen <movie>?", "label": "System: English or Arabic?"}
+{"pred": "System: <movie> is a good one", "label": "System: give me a sec"}
+{"pred": "System: <movie> is a good one", "label": "System: Did you like dumbanddumber"}
+{"pred": "System: <movie> was a good comedy movie", "label": "System: what did you think of <movie>?"}
+{"pred": "System: <movie> is a good one", "label": "System: have you watched <movie>?"}
+{"pred": "System: It is a good comedy", "label": "System: Yes, I have seen it, It's a great movie. ( <movie> )"}
+{"pred": "System: <movie> is a good one too", "label": "System: <movie> is very funny, but some people might find it to be offensive"}
+{"pred": "System: it is a good movie", "label": "System: Yes it is"}
+{"pred": "System: I hope you enjoy it!", "label": "System: You, should do so!"}
+{"pred": "System: I like that one too!", "label": "System: have you watched <movie>?"}
+{"pred": "System: I hope you have a great day!", "label": "System: <movie> is a great movie, so is <movie>. Old is gold!"}
+{"pred": "System: I hope you enjoy the movies!", "label": "System: You should really watch <movie> since you seem to be into comic books"}
+{"pred": "System: Bye!", "label": "System: <movie> stars chole graze an araaon taylor! Bye!"}
+{"pred": "System: What kind of movies do you like?", "label": "System: How are you"}
+{"pred": "System: I am good thanks", "label": "System: Aweee omg sooo cute!!"}
+{"pred": "System: I like <movie>", "label": "System: Do you guys like comedy?!"}
+{"pred": "System: Have you seen <movie>?", "label": "System: I would prefer <movie> it’s hilarious"}
+{"pred": "System: <movie> is a good one", "label": "System: If you guys like thriller then <movie> is great too just seen it"}
+{"pred": "System: <movie> is a good one", "label": "System: <movie> it’s actually made this year super cute drama romantic movie"}
+{"pred": "System: You are welcome! Have a good day", "label": "System: If your doing a movie might at hones then I would suggest <movie> With Channing Tatum. No problem!"}
+{"pred": "System: <movie> is a great movie", "label": "System: It’s soooo good! Lol"}
+{"pred": "System: Have a good day!", "label": "System: Of course! Nice chatting :) have a great movie night!!!"}
+{"pred": "System: Bye", "label": "System: Bye"}
+{"pred": "System: What kind of movies do you like?", "label": "System: How is everything"}
+{"pred": "System: I am good thanks!", "label": "System: Anytime! What type of movie do you prefer watching What’s your problem?!"}
+{"pred": "System: I also like <movie>", "label": "System: Some of my favorite is <movie>"}
+{"pred": "System: I have never seen that one", "label": "System: And <movie>"}
+{"pred": "System: <movie>", "label": "System: <movie> was pretty good as well"}
+{"pred": "System: I hope you enjoy watching!", "label": "System: Have you seen <movie>"}
+{"pred": "System: It is about a gangster", "label": "System: It’s about an illegal boxing promoter"}
+{"pred": "System: I hope you enjoy watching!", "label": "System: I also enjoyed <movie> Anytime :)"}
+{"pred": "System: Bye", "label": "System: Bye"}
+{"pred": "System: Hi! What kind of movies do you like?", "label": "System: Hi"}
+{"pred": "System: I love <movie>", "label": "System: My favorite adventure movie is <movie> ;) The new <movie> is good"}
+{"pred": "System: I haven't seen it yet, but I have to watch it again", "label": "System: <movie> series is great if you haven't watched them"}
+{"pred": "System: I hope you enjoy them!", "label": "System: <movie> is ialso a great adventure series"}
+{"pred": "System: bye", "label": "System: Bye"}
+{"pred": "System: Have you seen <movie>?", "label": "System: i know a lot of great movies oh\\ my favorite genre Have you seen <movie> or <movie> both classics by now i think :D"}
+{"pred": "System: <movie> is a good one", "label": "System: Its a good movie, one of the best by imdb Yes sure <movie> and <movie> both great no mistake in watching them"}
+{"pred": "System: I haven't seen that one yet but I have heard <movie> was good", "label": "System: Oh great!"}
+{"pred": "System: You're welcome!", "label": "System: glad i could help"}
+{"pred": "System: Hello Yes I love <movie>", "label": "System: <movie> and <movie> are classics."}
+{"pred": "System: <movie> is a good one.", "label": "System: What about <movie> and <movie>"}
+{"pred": "System: <movie> is a good one.", "label": "System: It's basically a coming-of-age high school aged movie"}
+{"pred": "System: <movie> is a good one", "label": "System: Bye"}
+{"pred": "System: Have you seen <movie>?", "label": "System: Great! Are you in the mood for something recent like <movie>? Or maybe something older like <movie>? I've heard great things about <movie> but I have not seen it yet. However, I really love <movie>."}
+{"pred": "System: I'm not sure if you like <movie>. It's a classic!", "label": "System: Yes, they are! And, Jamie Lee Curtis was stellar."}
+{"pred": "System: I haven't seen <movie> but it's a great one.", "label": "System: If you liked that, you might like <movie>. It is a hoot. We saw that around Christmas again. <movie>."}
+{"pred": "System: I think it's a great one!", "label": "System: You have great taste!"}
+{"pred": "System: I hope you enjoy it!", "label": "System: Yes, they did. It has a female cast this time. I am, too. Haha."}
+{"pred": "System: I hope you enjoy the movies!", "label": "System: I hope you have fun watching some movies!"}
+{"pred": "System: Bye!", "label": "System: Goodbye!"}
+{"pred": "System: I like <movie>", "label": "System: Oh i know a few good ones have you seen <movie> or <movie> <movie> is with jackie chan its a classic"}
+{"pred": "System: <movie> is a good one too", "label": "System: yes they are awesome also check <movie> and <movie> also great"}
+{"pred": "System: You're welcome. Have a great day!", "label": "System: No problem anytime! bye!"}
+{"pred": "System: I am good, thanks for you?", "label": "System: fine end you?"}
+{"pred": "System: <movie> is a good one", "label": "System: <movie> is good"}
+{"pred": "System: <movie> was good", "label": "System: yes yes"}
+{"pred": "System: <movie> is a good one", "label": "System: It is very good movie"}
+{"pred": "System: I'm good. What kind of movies do you like?", "label": "System: I'm doing great! Could I recommend maybe an adventure movie?"}
+{"pred": "System: Have you seen <movie>?", "label": "System: One of my faves is <movie> Harrison Ford for the win!"}
+{"pred": "System: <movie> is a great one", "label": "System: Or mayne <movie> (maybe)"}
+{"pred": "System: <movie> is a good one", "label": "System: It's a classic 80's one."}
+{"pred": "System: <movie> is a good one. I hope you enjoy it.", "label": "System: Or perhaps <movie> Also a great pick if you like 90's movies."}
+{"pred": "System: <movie> is a classic.", "label": "System: Have you seen it?"}
+{"pred": "System: <movie> is a good one. I hope you enjoy it.", "label": "System: One of my all time favorites is <movie> Tell me you've seen that one."}
+{"pred": "System: You're welcome. Have a great day!", "label": "System: You're welcome! It's been a fun chat."}
+{"pred": "System: Hi, I am good. What kind of movies do you like?", "label": "System: Hey there, can I recommend a movie for you? I'm doing great."}
+{"pred": "System: I'm good.", "label": "System: Hmmm, well I could recommend a good Thriller. It's on Netflix right now: <movie>"}
+{"pred": "System: I also really liked <movie>", "label": "System: It's super scary."}
+{"pred": "System: I also recommend <movie>", "label": "System: Or I <movie> if you like kiddie movies, that is."}
+{"pred": "System: I think you would like <movie>", "label": "System: Well since you have a son, I would recommend <movie> That one has come out recently."}
+{"pred": "System: I hope you have some recommendations. Have a good day.", "label": "System: Or maybe <movie>"}
+{"pred": "System: I think you will enjoy it.", "label": "System: I watched that one just last night. It was awesome."}
+{"pred": "System: You're welcome. Have a great day!", "label": "System: You should! It has a good plot, and is also funny. You're welcome."}
+{"pred": "System: Bye", "label": "System: Talk to you later."}
+{"pred": "System: I'm doing great. What kind of movies do you like?", "label": "System: Hey there. : ) I'm doing ood. good"}
+{"pred": "System: Sure! I can!", "label": "System: I've been looking around at some good Culinary films."}
+{"pred": "System: <movie> is a good one.", "label": "System: One of my faves is <movie> It's about the famous cook Julia Child."}
+{"pred": "System: <movie> is a good one.", "label": "System: Also, how could I not mention <movie>? It's about a mouse."}
+{"pred": "System: It's a classic.", "label": "System: Another good comedy is <movie>"}
+{"pred": "System: It's a comedy.", "label": "System: No, it's a movie about the history of General Tso."}
+{"pred": "System: It's a comedy.", "label": "System: Another good Indie one is <movie>"}
+{"pred": "System: You're welcome. Have a great day!", "label": "System: You are welcome. : )"}
+{"pred": "System: I'm not a fan of horror but I'm a fan.", "label": "System: <movie> and <movie> have to be one of my favorites. There's something super scary about clowns."}
+{"pred": "System: <movie> is a good one.", "label": "System: Also, <movie> I've never seen it, but I heard it was good."}
+{"pred": "System: <movie> is a good one.", "label": "System: And interesing thing about <movie> is that the actress was actually pushed too hard by the producer and ended up displaying a lot of her true feelings on set. They kept all of the footage."}
+{"pred": "System: I hope you enjoy it.", "label": "System: I think so too. : )"}
+{"pred": "System: You're welcome. Have a good day!", "label": "System: you're welcome."}
+{"pred": "System: I'm good. what type of movies do you like?", "label": "System: im good"}
+{"pred": "System: ok great, what are your favorite movies?", "label": "System: what type of movie are you looking to watch?"}
+{"pred": "System: <movie> is a good one", "label": "System: I just watched <movie> it has bruce willis it was very goo d"}
+{"pred": "System: <movie> is a good one", "label": "System: yeah, just came out on dvd"}
+{"pred": "System: <movie> is a good one", "label": "System: If youare looking for more of a comedy <movie> was pretty good"}
+{"pred": "System: <movie> is a classic", "label": "System: its more of an action comedy....pretty fun <movie> was good. It has 50 cent."}
+{"pred": "System: <movie> is a good one", "label": "System: awesome"}
+{"pred": "System: <movie> is a good one", "label": "System: lol"}
+{"pred": "System: <movie> is a good one", "label": "System: if you are into war movies <movie> was a good one It's got my boy Thor, but not as Thor. haha"}
+{"pred": "System: it's a good movie", "label": "System: haha thats perfect"}
+{"pred": "System: you're welcome", "label": "System: no problem"}
+{"pred": "System: bye", "label": "System: have an awesome night! goodbye"}
+{"pred": "System: I haven't seen that one. Have you seen <movie>?", "label": "System: have you seen <movie>"}
+{"pred": "System: I haven't seen that one. I've seen <movie>", "label": "System: or <movie> is a classic"}
+{"pred": "System: I haven't seen that one", "label": "System: <movie> is another classic"}
+{"pred": "System: I think you will like <movie>", "label": "System: I love all those movies. I'm a war film buff yeah that's the name of the plane ww2 over europe bombing germany"}
+{"pred": "System: <movie> is a good one", "label": "System: I just watched <movie> it's a classic ww2 film about d day that good for you?"}
+{"pred": "System: Hi, what kind of movies do you like?", "label": "System: Like comedy? Animation?"}
+{"pred": "System: Have you seen <movie>?", "label": "System: I can recommend a great war movie <movie>"}
+{"pred": "System: <movie> is a great one", "label": "System: I liked the comedy <movie>"}
+{"pred": "System: It's a comedy movie", "label": "System: I like <movie> it's kinda a psych sci fi"}
+{"pred": "System: <movie> is a great movie", "label": "System: A comedy I really enjoyed was <movie> man about a group of gals who were played by the same man and they united to get revenge on him (funny revenege)"}
+{"pred": "System: Well, I hope you enjoy it!", "label": "System: What's your all time favorite?"}
+{"pred": "System: You too!", "label": "System: you too bye"}
+{"pred": "System: I would recommend <movie>", "label": "System: Good. Sure what kind do you like? Animation, <movie> was great <movie> was great. <movie> was great. <movie> was great and I really liked <movie>"}
+{"pred": "System: I haven't heard of that one. I have seen <movie> was great too.", "label": "System: I did! Surprisingly, I liked <movie> and I don't usually care for animated flicks"}
+{"pred": "System: You're welcome!", "label": "System: I did, I liked <movie> and I don't like animated flics"}
+{"pred": "System: Bye!", "label": "System: I haven't seen <movie> You have a good day too"}
+{"pred": "System: I would recommend <movie>", "label": "System: Sure I can. I liked comedy and I really like horror so I say <movie> and <movie> to start off."}
+{"pred": "System: I would also recommend <movie>", "label": "System: I liked <movie> and <movie> too"}
+{"pred": "System: <movie> is a good one of the other movie", "label": "System: If you like horror I liked <movie>"}
+{"pred": "System: <movie> is a good one", "label": "System: What's your favorite"}
+{"pred": "System: It's a good one", "label": "System: Not caught that one!"}
+{"pred": "System: You're welcome! Have a great day!", "label": "System: You are welcome. Have a good day"}
+{"pred": "System: Bye", "label": "System: bye"}
+{"pred": "System: <movie> is a good one", "label": "System: How about something old and something new? <movie> and <movie>"}
+{"pred": "System: <movie> is a good one", "label": "System: How about <movie>"}
+{"pred": "System: <movie> is a good one", "label": "System: How about <movie> and <movie>"}
+{"pred": "System: <movie> is a good one", "label": "System: My fav <movie>"}
+{"pred": "System: I think you will like it", "label": "System: Haven't seen that one yet"}
+{"pred": "System: You too!", "label": "System: You're welcome have a great day! bye"}
+{"pred": "System: I'm a fan of <movie>", "label": "System: Good! Want to see some horror flicks? I liked <movie> though the book was better"}
+{"pred": "System: I also like horror movies like <movie>", "label": "System: I also liked <movie> and <movie> and the <movie> and <movie>"}
+{"pred": "System: <movie> is a good one too", "label": "System: Oh, you have some good watching coming up and try <movie> Have a good day now. Bye"}
+{"pred": "System: Hi, what kind of movies do you like?", "label": "System: Hi I am good how about some sports movies"}
+{"pred": "System: <movie> is a good one", "label": "System: <movie> was good and so was <movie> I also liked <movie> and <movie>"}
+{"pred": "System: <movie> is a good one", "label": "System: Yep, saw them all and I liked <movie>"}
+{"pred": "System: You're welcome!", "label": "System: Yep. Good movie. I like baseball too, though mostly the hot dogs!"}
+{"pred": "System: ok, I love <movie>", "label": "System: <movie> is a classic but I don't know any other ones can you think of another movie type you like?"}
+{"pred": "System: I have not seen that one but I have never seen it.", "label": "System: those sound interesting"}
+{"pred": "System: <movie> is a good one too", "label": "System: favorite movie is <movie>"}
+{"pred": "System: I love that one of the <movie>", "label": "System: <movie> is a classic very funny. stoner comedy"}
+{"pred": "System: I hope you enjoy it", "label": "System: check it out"}
+{"pred": "System: you're welcome", "label": "System: well that's all I have have a nice day"}
+{"pred": "System: Have you seen <movie>?", "label": "System: <movie> is my fav of all time <movie> is a classic"}
+{"pred": "System: <movie> is a good one", "label": "System: but it's kind of a comedy too"}
+{"pred": "System: <movie> is a good one", "label": "System: <movie> is a classic adventure funny too"}
+{"pred": "System: <movie> is a good one", "label": "System: <movie> is a great classic adventure <movie> is just as good"}
+{"pred": "System: <movie> is a good one", "label": "System: <movie> is a good one then oh you want to check them out then well, thats all I've got have a nice night"}
+{"pred": "System: I'm good. What kind of movies do you like?", "label": "System: hello fine end you?"}
+{"pred": "System: ok, how about <movie> or <movie>", "label": "System: <movie>"}
+{"pred": "System: <movie>", "label": "System: is good"}
+{"pred": "System: <movie>", "label": "System: <movie> I've seen it and I liked it a lot"}
+{"pred": "System: <movie>", "label": "System: <movie>"}
+{"pred": "System: <movie>", "label": "System: ok"}
+{"pred": "System: <movie>", "label": "System: <movie>"}
+{"pred": "System: bye", "label": "System: it's very good bye"}
+{"pred": "System: bye", "label": "System: bye"}
+{"pred": "System: Hi, what kind of movies do you like?", "label": "System: Hi,"}
+{"pred": "System: I'm good, thanks for asking.", "label": "System: fine, you"}
+{"pred": "System: I'm doing well", "label": "System: If I've seen it, it's an excellent movie"}
+{"pred": "System: <movie>", "label": "System: it's okay, I'll see it"}
+{"pred": "System: <movie>", "label": "System: <movie>"}
+{"pred": "System: <movie>", "label": "System: Yes, I recommend it for you to see it as a family"}
+{"pred": "System: <movie>", "label": "System: Thanks for the recommendations, we'll talk later"}
+{"pred": "System: bye", "label": "System: bye..."}
+{"pred": "System: Hi, I'm good. What kind of movies do you like?", "label": "System: Hi how about a good comedy like <movie>"}
+{"pred": "System: I think you would like <movie>", "label": "System: OK. <movie> was good, but I think we knew who the killer was"}
+{"pred": "System: <movie> was a good one too", "label": "System: Didn't see <movie> - I'm thinking!"}
+{"pred": "System: <movie> is a good one", "label": "System: How about <movie>"}
+{"pred": "System: It's a good one.", "label": "System: Oh, horror. How about <movie>? <movie> is a book character they turned into a movie character. He's quite intersting."}
+{"pred": "System: Yes.", "label": "System: I liked <movie> for horror. But there was a question of anyone getting killed, but you knew the killer. Yes, Jack Reacher is sort of a detective"}
+{"pred": "System: It's a mystery, but it's a good one.", "label": "System: I just finished <movie>"}
+{"pred": "System: It's a good one.", "label": "System: I also liked <movie>"}
+{"pred": "System: It's a good one. I hope you enjoy it.", "label": "System: Yes, <movie> is an oldie, but also remade in 2009 <movie> I think the 2009 one has the weird kids"}
+{"pred": "System: It's a good one. I hope you have a good night.", "label": "System: Me either. Just the trailers."}
+{"pred": "System: It was a good one.", "label": "System: Yes, I did like <movie>, I like the books as well though they've gotten very commercial"}
+{"pred": "System: It's a good one.", "label": "System: Good. Go watch your movie and hopefully we'll chat later. bye"}
+{"pred": "System: Hi, what kind of movies do you like?", "label": "System: Hi. Wanna see a war movie like <movie>"}
+{"pred": "System: Have you seen <movie>?", "label": "System: OK I really liked <movie> and I don't normally watch animated stuff!"}
+{"pred": "System: It's a little old school but it's a good movie.", "label": "System: Oh, no, I am selective as an adult for example I loved <movie>! Ferdinand was a peaceful bull who didn't want to fight and of course in Spain all bulls fight"}
+{"pred": "System: I think you would like <movie>", "label": "System: Different vibe! Both are good. I also liked <movie> and <movie>"}
+{"pred": "System: I think it's a lot of the same thing.", "label": "System: I haven't seen <movie> but I loved <movie> I hope I gave you some suggestions you'll enjoy! Have a great day, bye."}
+{"pred": "System: I have not seen that one. I have never seen <movie>", "label": "System: what kind of movie can I recommend for you?"}
+{"pred": "System: <movie> is a good one.", "label": "System: <movie> is the only climbing movie I know"}
+{"pred": "System: <movie> is a good one", "label": "System: <movie> is my favorite, if you've ever heard that before lol <movie> is an excellent movie <movie> is an excellent movie"}
+{"pred": "System: <movie> is a good one", "label": "System: christopher nolan makes the best movies check them out"}
+{"pred": "System: <movie> is a great movie", "label": "System: well, that's all I have for you You have a nice night"}
+{"pred": "System: Sure, I can help you with that.", "label": "System: I'm good. A good war movie is <movie>"}
+{"pred": "System: <movie> is a good one.", "label": "System: <movie> was a war movie musical and I loved it"}
+{"pred": "System: <movie> is a good one", "label": "System: It's an oldie! I also liked <movie> and <movie>"}
+{"pred": "System: <movie> is a good one", "label": "System: Oh, <movie> day was terrific! Hey, you enjoy them. Bye"}
+{"pred": "System: Hi, I'm good. What kind of movies do you like?", "label": "System: Good In the mood for a war movie? <movie>"}
+{"pred": "System: <movie> is a good one", "label": "System: <movie> was a good war movie"}
+{"pred": "System: <movie> is a good one", "label": "System: <movie> is another war movie favorite of my"}
+{"pred": "System: <movie> is a good one", "label": "System: How about <movie>"}
+{"pred": "System: I have not seen that one but I have seen it", "label": "System: War movies are a hobby of mine! <movie> was good too!"}
+{"pred": "System: You too! Have a good day!", "label": "System: Hey you're welcome! Bye"}
+{"pred": "System: I'm doing good. Have you seen <movie>?", "label": "System: good"}
+{"pred": "System: <movie> is a good one", "label": "System: Have you seen <movie>"}
+{"pred": "System: I haven. I've heard that one is good.", "label": "System: How about <movie>"}
+{"pred": "System: I haven.", "label": "System: Well, there's <movie> and then at the opposite end of the spectrum <movie>"}
+{"pred": "System: I have not seen that one either.", "label": "System: You gotta see them both!"}
+{"pred": "System: Hello, what kind of movies do you like?", "label": "System: Hey. Do you like Eddie Murphy?"}
+{"pred": "System: Have you seen <movie>?", "label": "System: Cause I recommend <movie> for the grownups. And <movie> for the family."}
+{"pred": "System: I haven. I've seen that one. I have seen <movie>", "label": "System: I haven't seen that."}
+{"pred": "System: It's a good one.", "label": "System: If you're in the mood for a revamp of Bill Murray I suggest <movie> for <movie>."}
+{"pred": "System: <movie> is a good one.", "label": "System: They probably have few similarities, but you can try."}
+{"pred": "System: It's a good one.", "label": "System: Remember <movie> is Bill Murray. Why didn't you like <movie>?"}
+{"pred": "System: It's a good one.", "label": "System: Movies referring to Catholicism usually are. I don't know why."}
+{"pred": "System: You too!", "label": "System: Peace to you!"}
+{"pred": "System: I have seen <movie> and <movie>", "label": "System: Hey. Anything like <movie>?"}
+{"pred": "System: I also liked <movie>", "label": "System: What about <movie> or <movie>?"}
+{"pred": "System: I haven't seen it yet. It's a good movie.", "label": "System: They're war and action."}
+{"pred": "System: I think so much of the new <movie>", "label": "System: Be sure to watch the <movie> first. It's better."}
+{"pred": "System: I love to see the kids one of my favorites.", "label": "System: how are you?"}
+{"pred": "System: I am good.", "label": "System: not like <movie> or <movie> <movie> was super good but not very subtle <movie> is kind of subtle I love that movie"}
+{"pred": "System: I haven't seen that one. I've seen <movie>", "label": "System: the book was even better <movie> was fantastic well that's all I have for suggestions you have a good night!"}
+{"pred": "System: Hi, what kind of movies do you like?", "label": "System: Hi What movies do you want me to recommend?"}
+{"pred": "System: <movie> is a good one", "label": "System: Well movies like that I recommend <movie> and <movie> Are very very good movies!"}
+{"pred": "System: <movie> is a good one", "label": "System: If you like those movies then do not miss seeing <movie> I know you like them"}
+{"pred": "System: <movie> is a good one", "label": "System: <movie> is my favorite movie... I hope you liked my recommendations, goodbye"}
+{"pred": "System: What kind of movies do you like?", "label": "System: Hi Well What movies do you like? to see where I can help you"}
+{"pred": "System: I like <movie>", "label": "System: Well, i recomend <movie> sagas, <movie> and <movie> sagas, very very good movies for you"}
+{"pred": "System: Have you seen <movie>?", "label": "System: Perfect, recomend my favorite movie, he is a hero although his powers are with magic <movie> Is perfect movie!!!"}
+{"pred": "System: I hope you enjoy the suggestions!", "label": "System: I hope you like my friend, good luck"}
+{"pred": "System: Have you seen <movie>?", "label": "System: May I recommend <movie>? Or how about <movie>?"}
+{"pred": "System: Or <movie>?", "label": "System: Well <movie> really isn't action. Sorry about that."}
+{"pred": "System: Or <movie>?", "label": "System: Ever heard of <movie>?"}
+{"pred": "System: <movie> is a good one.", "label": "System: Well have you seen <movie>? They're similar."}
+{"pred": "System: Or <movie>?", "label": "System: Ever seen <movie>? They're similar."}
+{"pred": "System: I think you will like it.", "label": "System: I haven't seen that one."}
+{"pred": "System: You should check it out.", "label": "System: Maybe. Do you like <movie> movies? I sort of like them."}
+{"pred": "System: It is a good one. I hope you enjoy.", "label": "System: That's good."}
+{"pred": "System: You're welcome. Bye.", "label": "System: You've seen everything I know! But you're welcome."}
+{"pred": "System: Have a good night.", "label": "System: Okay. Have a good day."}
+{"pred": "System: What kind of movies do you like?", "label": "System: what kind of movies do you like? <movie> is my favorite of all time"}
+{"pred": "System: I like science fi movies too", "label": "System: <movie> is a close second <movie> is a really good one christopher nolan's movies are outstanding"}
+{"pred": "System: <movie> is a good one", "label": "System: <movie> is a good one I like patrick stewwart the best out off all the captains"}
+{"pred": "System: <movie> is a great movie", "label": "System: well that's all I have You have a good night"}
+{"pred": "System: I'm good.", "label": "System: <movie> is a good one my mum is watching that as we speak st went over and hooked up netflix"}
+{"pred": "System: <movie> is a great one", "label": "System: <movie> is my favorite which is strange because my birth middle name is Thor"}
+{"pred": "System: I hope you enjoy the suggestions", "label": "System: any of the <movie> movies are excellent I'm a big patrick stewart fan"}
+{"pred": "System: you are welcome", "label": "System: <movie> is good"}
+{"pred": "System: <movie> is a great one", "label": "System: Tobey Macguire is really good in it well thank you that;s all I have you have a good night"}
+{"pred": "System: I'm great, thanks for asking.", "label": "System: Yes what movies are you into?"}
+{"pred": "System: I like <movie>", "label": "System: Well my favorite action movie is <movie>"}
+{"pred": "System: <movie> is a good one", "label": "System: Also <movie> with Dwayne Johnson and <movie> with Leonardo Di Caprio Have you seen <movie>?"}
+{"pred": "System: I have to see <movie>", "label": "System: I gave you four! Hope they are what you like! I seen them they are all awesome!"}
+{"pred": "System: Have a great day!", "label": "System: Great!"}
+{"pred": "System: You should check out <movie>", "label": "System: Well nice chatting bye!"}
+{"pred": "System: Hi, what kind of movies do you like?", "label": "System: I'm good. What are you in the mood for?"}
+{"pred": "System: Have you seen <movie>?", "label": "System: <movie> is good."}
+{"pred": "System: <movie> is a good one.", "label": "System: <movie> is good"}
+{"pred": "System: <movie> is a good one", "label": "System: <movie> is another princess movie as is <movie>"}
+{"pred": "System: <movie> is a good one", "label": "System: How about <movie>"}
+{"pred": "System: I have seen <movie>", "label": "System: what kind of movies do you like? my favorite is <movie> not really <movie> was super good I think you's like it"}
+{"pred": "System: <movie> was a good one", "label": "System: <movie> is really good snipers during the battle of stalingrad"}
+{"pred": "System: I think it was a good movie!", "label": "System: I don't know. that's all I really have you have a nice day"}
+{"pred": "System: Have you seen <movie>?", "label": "System: Have you seen <movie> yet?"}
+{"pred": "System: <movie> is another good one.", "label": "System: You might like <movie> Or the classics, like <movie>"}
+{"pred": "System: I also like <movie>", "label": "System: You might also want to check out <movie> and <movie>"}
+{"pred": "System: I hope you enjoy them. Have a great day!", "label": "System: Yes, you do! Bye"}
+{"pred": "System: I like <movie>", "label": "System: Sure, actually <movie> is pretty similar villain-wise. <movie> and <movie> are the same detective-like stories. I'd also recommend <movie>"}
+{"pred": "System: I haven't seen that one. I hope you enjoy it.", "label": "System: Cool. Have a good one."}
+{"pred": "System: I have seen <movie>", "label": "System: <movie> might interest you. And <movie> <movie> is suspenseful without being gory"}
+{"pred": "System: <movie> is a great movie", "label": "System: YW have a good night"}
+{"pred": "System: I would recommend <movie>", "label": "System: Well my favorite is <movie> That's pretty funny"}
+{"pred": "System: I also like <movie>", "label": "System: Did you see <movie>?? That's a good one"}
+{"pred": "System: I hope you enjoy those movies!", "label": "System: Well <movie> Is a movie like <movie> Yes, <movie> is pretty good too"}
+{"pred": "System: You're welcome. Have a good day", "label": "System: Bye have a nice day!!"}
+{"pred": "System: Hi! I would recommend <movie>", "label": "System: Hello. I see you like thrillers! What about <movie> or <movie>? There's less slashing in these. But I like them."}
+{"pred": "System: I also like <movie>", "label": "System: It's about a little girl who gets adopted by a family of four. When she comes the family's life turns upside down."}
+{"pred": "System: I haven't seen that one. I think you will like it.", "label": "System: They have to figure out who she really is. Massive slasher films? Perhaps you might like the old <movie> movies or maybe <movie>. That's all I can think of right now that are similar."}
+{"pred": "System: You too.", "label": "System: You're certainly welcome. Bye."}
+{"pred": "System: what type of movies do you like?", "label": "System: <movie> I recommend it is very good and seen with my relatives"}
+{"pred": "System: <movie>", "label": "System: Can you find a song that recommends another movie?"}
+{"pred": "System: <movie> is a good one", "label": "System: <movie> It is very good movie I liked it"}
+{"pred": "System: <movie>", "label": "System: <movie> is good movie"}
+{"pred": "System: <movie>", "label": "System: it was nice to recommend you movies chao bye"}
+{"pred": "System: bye", "label": "System: <movie>"}
+{"pred": "System: what kind of movies do you like?", "label": "System: <movie> is the good movie"}
+{"pred": "System: <movie> is a good one", "label": "System: I'm glad <movie>"}
+{"pred": "System: <movie> is a good one", "label": "System: but I think you also like this one"}
+{"pred": "System: <movie>", "label": "System: <movie> <movie> It is also good"}
+{"pred": "System: bye", "label": "System: bye"}
+{"pred": "System: <movie> is a good one", "label": "System: <movie> It is very good movie I liked it a lot"}
+{"pred": "System: <movie> is a good one", "label": "System: <movie>"}
+{"pred": "System: <movie>", "label": "System: This has been one of the best brands of the time it came out <movie>"}
+{"pred": "System: <movie>", "label": "System: <movie> is good movie"}
+{"pred": "System: <movie> was good too", "label": "System: you do not spend a good day until then bye"}
+{"pred": "System: What kind of movies do you like?", "label": "System: What gender do you look for to help you?"}
+{"pred": "System: Have you seen <movie>?", "label": "System: <movie> has been the best for me in movies of this genre"}
+{"pred": "System: <movie> is a good one", "label": "System: <movie> is good movie"}
+{"pred": "System: <movie> is a good one", "label": "System: yess <movie> This is a new and very good I recommend it"}
+{"pred": "System: <movie> is a good one", "label": "System: <movie> this movie is very good"}
+{"pred": "System: <movie> is a good one", "label": "System: good was a pleasure to recommend movies that you spend a good day until then bye"}
+{"pred": "System: ok, what are you looking for? <movie>", "label": "System: <movie> some of the best in cinema"}
+{"pred": "System: <movie> is a good one", "label": "System: <movie> a somewhat charismatic movie"}
+{"pred": "System: <movie> is a good one", "label": "System: <movie>"}
+{"pred": "System: <movie>", "label": "System: This is very recommended for you"}
+{"pred": "System: <movie>", "label": "System: <movie> Even with your departure time it is very good"}
+{"pred": "System: bye", "label": "System: bye"}
+{"pred": "System: Hi! What kind of movies do you like?", "label": "System: Hi, what do you want me to recommend?"}
+{"pred": "System: <movie> is a good one.", "label": "System: there is more to see that they are super heroes, very good"}
+{"pred": "System: <movie> is a good one", "label": "System: <movie> <movie> i love dead pool <movie>"}
+{"pred": "System: <movie> is a good one", "label": "System: something old but good good bye"}
+{"pred": "System: Hi, what kind of movies do you like?", "label": "System: Great. What kind of movies do you like?"}
+{"pred": "System: I love <movie> and <movie>", "label": "System: Did you see <movie> It's kind of eery"}
+{"pred": "System: I also like <movie>", "label": "System: <movie> also comes to mind"}
+{"pred": "System: You too!", "label": "System: thanks you too"}
+{"pred": "System: Hi, what kind of movies do you like?", "label": "System: Hey. How are you?"}
+{"pred": "System: I'm good.", "label": "System: <movie> comes out tomorrow We can't wait to see it. The first one was hilarious"}
+{"pred": "System: <movie> is a good one", "label": "System: <movie> is still out too. My sons liked it a lot"}
+{"pred": "System: <movie> is a good one.", "label": "System: <movie> is also supposed to be good. Hope you fine something you like. Good night"}
+{"pred": "System: I am good", "label": "System: <movie> I recommend it. lol. <movie> I recommend too"}
+{"pred": "System: <movie> is a good one", "label": "System: sorry but those two movies rock what are you looking for tonight?"}
+{"pred": "System: <movie> is a good one", "label": "System: <movie>?"}
+{"pred": "System: <movie> is a good one", "label": "System: I recommend that too lol"}
+{"pred": "System: <movie> is a good one too", "label": "System: <movie> is also a great movie"}
+{"pred": "System: <movie> is a good one too", "label": "System: I know, i didn't know it'd be on there check it out"}
+{"pred": "System: You too!", "label": "System: one of Leo's best movies yupper good night"}
+{"pred": "System: I'm looking for movies. Have you seen <movie>?", "label": "System: but really my fav is <movie> and <movie>"}
+{"pred": "System: <movie> is a good one", "label": "System: what kind of movies are you looking for?"}
+{"pred": "System: <movie> is a good one", "label": "System: <movie> is a super good movie"}
+{"pred": "System: <movie> is a good one", "label": "System: <movie> is my favorite batman"}
+{"pred": "System: <movie> is a good movie too", "label": "System: hey thats good anyways, that's all I have"}
+{"pred": "System: <movie> is a good one", "label": "System: You have a good night"}
+{"pred": "System: I love <movie>", "label": "System: no but really <movie> is my favorite"}
+{"pred": "System: <movie> is a good one", "label": "System: <movie> is a close second <movie> is third"}
+{"pred": "System: <movie> is a good movie", "label": "System: <movie> is my favorite from the batman sure I'm just throwing good movies out there"}
+{"pred": "System: you too. bye", "label": "System: yeah you too sure. you too"}
+{"pred": "System: Hi, I'm good", "label": "System: hi how is this I recommend this movies"}
+{"pred": "System: <movie> is a good one", "label": "System: <movie>"}
+{"pred": "System: <movie>", "label": "System: <movie>"}
+{"pred": "System: <movie>", "label": "System: this is also tremendous triligia <movie>"}
+{"pred": "System: <movie>", "label": "System: another good movie Well I recommend you are good film"}
+{"pred": "System: have you seen <movie>?", "label": "System: best movie ever what kind of movies do you like?"}
+{"pred": "System: yes, I like <movie>", "label": "System: <movie>"}
+{"pred": "System: <movie> is a good one too", "label": "System: <movie> <movie>"}
+{"pred": "System: Have you seen <movie>?", "label": "System: Do you like Stephen King movies? What about <movie> or <movie>? those are two of my favorites I also really like <movie> if you're looking for something more modern"}
+{"pred": "System: I haven't seen <movie> yet but I have seen it.", "label": "System: right. I like the stories of the Warrens. <movie> was creepy, but the book was even better!"}
+{"pred": "System: I think so. I'm not sure if you like <movie>", "label": "System: they are"}
+{"pred": "System: I think so. I have seen that one. I think you will enjoy it.", "label": "System: The original <movie> is a good Wes Craven one. <movie> was actually really good, too."}
+{"pred": "System: I hope you have a good night!", "label": "System: lol, I think it may have been better than the original"}
+{"pred": "System: I hope you have a good night!", "label": "System: haha! Well, have a good night- thanks for the chat! You helped me remember some good movies!"}
+{"pred": "System: What kind of movies do you like?", "label": "System: Fine and you?"}
+{"pred": "System: I like <movie>", "label": "System: Which movie is your favorite?"}
+{"pred": "System: Have you seen <movie>?", "label": "System: Which movie is your favorite?"}
+{"pred": "System: <movie> is a good one", "label": "System: Well there's a lot of movie like <movie>, there's <movie>, <movie> and <movie> this is my favorite"}
+{"pred": "System: I hope you enjoy those suggestions!", "label": "System: You should see these movies"}
+{"pred": "System: Have a great day!", "label": "System: You're welcome Bye"}
+{"pred": "System: <movie> is a good movie", "label": "System: oh ok"}
+{"pred": "System: <movie> is a good movie", "label": "System: <movie> GREAT movie"}
+{"pred": "System: <movie> is a good movie", "label": "System: <movie> hilarious!"}
+{"pred": "System: <movie> is a great movie", "label": "System: hey, good one"}
+{"pred": "System: <movie> is a great movie", "label": "System: it was alright well you have a good night!"}
+{"pred": "System: I have never seen <movie>", "label": "System: Nice! Have you seen <movie>? That's a really good one Or <movie> is awesome"}
+{"pred": "System: I haven't seen that one yet. I have seen <movie>", "label": "System: That's one of my favorites. I also like <movie> have you seen that one?"}
+{"pred": "System: I haven I've heard <movie> is a good one too", "label": "System: You really should! Check out <movie> too, if you get a chance!"}
+{"pred": "System: I hope you enjoy!", "label": "System: nice! Welcome! Have a good one!"}
+{"pred": "System: I have never seen <movie>", "label": "System: Go with <movie>. It's set in a fictional world, too. It's a fictional underground world."}
+{"pred": "System: <movie> is a good one.", "label": "System: <movie>? Things die then come back alive."}
+{"pred": "System: <movie> is a good one.", "label": "System: Or <movie>. You can add that to your list. It's more action and thriller."}
+{"pred": "System: <movie> is a good one.", "label": "System: So you like the <movie> idea?"}
+{"pred": "System: <movie> is a good one.", "label": "System: Want any more recommendations?"}
+{"pred": "System: You're welcome.", "label": "System: You are welcome. Bye."}
+{"pred": "System: I would recommend <movie>", "label": "System: how are you tonight? <movie> thats one you'll like"}
+{"pred": "System: <movie> is a good one", "label": "System: <movie> those are my two favs of all time lets see..... I'm great! <movie>"}
+{"pred": "System: <movie> is a good one", "label": "System: just joking! <movie> and <movie> those are two great movies man that's like all I have for you you have a great evening"}
+{"pred": "System: you too!", "label": "System: sorry I couldn't be more help"}
+{"pred": "System: I have seen <movie> and <movie>", "label": "System: we'll have to be patient with each other, the chat can be buggy <movie> <movie> I love that one because I love juliette lewis <movie> That's one I hold close to my heart here we go"}
+{"pred": "System: I have not seen <movie>", "label": "System: yeah it's an excellent movie"}
+{"pred": "System: I hope you enjoy it", "label": "System: <movie> that's one of my favs's heist movie"}
+{"pred": "System: I hope you enjoy it", "label": "System: you won't regret it you won't regret it ve a good evening"}
+{"pred": "System: no problem have a good night", "label": "System: enjoy whatever you watch!"}
+{"pred": "System: I have seen <movie> and <movie>", "label": "System: oh geez you mean like <movie> or <movie> lol deja vu there's always <movie> that's an excellent movie"}
+{"pred": "System: I like <movie> and <movie>", "label": "System: <movie> is my fav out of that trilogy"}
+{"pred": "System: I have not seen that one yet, but I have seen <movie>", "label": "System: <movie> is an awesome movie"}
+{"pred": "System: I have not seen that one but I have seen it.", "label": "System: you should check that out if you haven't seen it martin sheen when he was really young it's fricking awesome"}
+{"pred": "System: I hope you enjoy it", "label": "System: fyi, I restart my browser after every chat and I don't have any problems then"}
+{"pred": "System: no problem!", "label": "System: yeah give it a shot alright till next time goodbye"}
+{"pred": "System: I'm good thanks.", "label": "System: what kind of movies do you like? oh I'm great"}
+{"pred": "System: I love <movie>", "label": "System: let me recommend <movie> it's a great older movie ut you like comedies I'm taking it well how about <movie> <movie> is another hilarious one <movie> is a little darker but still a really good movie <movie> is freaking hilarious too, but in a smart funny sort of way"}
+{"pred": "System: I have not seen that one", "label": "System: well thats all I have to suggest you have a good night"}
+{"pred": "System: ok, I can recommend <movie>", "label": "System: what tipe of movies do you like watch"}
+{"pred": "System: have you seen <movie>", "label": "System: ok good"}
+{"pred": "System: <movie> is a good one", "label": "System: <movie> <movie> is very horror thas movie or <movie> what you think about <movie> hello still here"}
+{"pred": "System: <movie> is a good one", "label": "System: <movie> <movie>"}
+{"pred": "System: yes, it was good", "label": "System: or <movie> yes it is very good"}
+{"pred": "System: I think so I have heard of those movies are good things about the new <movie>", "label": "System: yes thanks do you have a great day"}
+{"pred": "System: I hope you have been a great night", "label": "System: is good thas movie i watch every day ok thanks my love you are a love have a great day good bye"}
+{"pred": "System: i have a good night", "label": "System: you want goin speak about movies"}
+{"pred": "System: no problem have a good day", "label": "System: of action"}
+{"pred": "System: have you seen <movie>", "label": "System: how <movie>"}
+{"pred": "System: i have not been a good one", "label": "System: I would like to stay but I have to leave thanks or the movies good bye"}
+{"pred": "System: Hello, what kind of movies do you like?", "label": "System: Hi, how are you. yes i can"}
+{"pred": "System: I am good", "label": "System: So a family movie is what you are looking for?"}
+{"pred": "System: I like <movie>", "label": "System: i just recently watched <movie> with my kids, they loved it. it is an animated movie but it has a really good plot and storyline and is really emotional at the end."}
+{"pred": "System: <movie> is a good one.", "label": "System: I also like several classics such as <movie> and the sequels Do you prefer more current family films?"}
+{"pred": "System: <movie> is a classic movie", "label": "System: The movie <movie> was amazing"}
+{"pred": "System: <movie> is a classic", "label": "System: We also read the book based off of that movie <movie> <movie> was so good What about <movie>, i laughed so hard at that little kid"}
+{"pred": "System: You are welcome. Have a great day!", "label": "System: Talking about all these great movies has got me wanting to go inside now and watch some. thank you. glad i could help goodbye"}
+{"pred": "System: what kind of movies do you like?", "label": "System: What movie genre are you looking for? <movie>"}
+{"pred": "System: <movie> is a good one", "label": "System: it's very buyena movie I recommend it one of the best in cinema"}
+{"pred": "System: <movie> is a good one", "label": "System: <movie> This has been one of the most liked I would recommend it very funny"}
+{"pred": "System: <movie> is a good one", "label": "System: <movie> It is one of the best to recommend"}
+{"pred": "System: <movie> is a good one", "label": "System: <movie>"}
+{"pred": "System: <movie>", "label": "System: good was a pleasure to share my recommendations with you have a good day see you later good bye"}
+{"pred": "System: what kind of movies do you like?", "label": "System: what gender do you look for"}
+{"pred": "System: have you seen <movie>", "label": "System: wait let me recomedarte something good good <movie> one of the best that was released this year"}
+{"pred": "System: <movie> is a good one", "label": "System: very good superhero movie <movie> very good movie and fun"}
+{"pred": "System: <movie> is a good one", "label": "System: <movie> <movie> these are very good movies for you It was a pleasure to share my recommendations with you until then good bye"}
+{"pred": "System: yes, it was good", "label": "System: <movie> good bye man"}
+{"pred": "System: Hi, what kind of movies do you like?", "label": "System: hello"}
+{"pred": "System: what type of movies do you like?", "label": "System: <movie>"}
+{"pred": "System: <movie>", "label": "System: <movie>"}
+{"pred": "System: <movie>", "label": "System: that movie that I'm recommending is very good you have to see it <movie>"}
+{"pred": "System: <movie>", "label": "System: <movie>"}
+{"pred": "System: bye", "label": "System: bye"}
+{"pred": "System: <movie> is a good one", "label": "System: good fine <movie> or <movie>"}
+{"pred": "System: <movie> was a good one too", "label": "System: thas movies are very good"}
+{"pred": "System: <movie> is a good one", "label": "System: or <movie>"}
+{"pred": "System: <movie> was good too", "label": "System: movies for kisds is good thanks"}
+{"pred": "System: you too", "label": "System: good bye"}
+{"pred": "System: Hi! I would love <movie>", "label": "System: Hi. I've got my thinking cap on and I think maybe you would like <movie>"}
+{"pred": "System: <movie> was a good one.", "label": "System: How about <movie> and <movie>"}
+{"pred": "System: You are welcome. Have a great day!", "label": "System: You might like <movie> too You might like <movie> too You might like <movie> too You're welcome, have a good day, bye"}
+{"pred": "System: What kind of movies do you like?", "label": "System: Fine and you?"}
+{"pred": "System: I'm good.", "label": "System: What kind of movies do you like? Well <movie> and <movie> are two good options for your kids"}
+{"pred": "System: Have you seen <movie>?", "label": "System: <movie> Too"}
+{"pred": "System: <movie> is a good one", "label": "System: <movie> Is pretty good!!"}
+{"pred": "System: I have to watch <movie>", "label": "System: Omg I really want to see that movie!!"}
+{"pred": "System: ok bye", "label": "System: Bye have a nice day"}
+{"pred": "System: <movie> is a good one", "label": "System: Well there's a lot of movies like that one is <movie>, <movie> and <movie> is pretty good too!!"}
+{"pred": "System: I love <movie>", "label": "System: Well you should see <movie> that movie is awesome!! Yeah!! That movie is great, one of my favorites"}
+{"pred": "System: I hope you enjoy those movies!", "label": "System: Enjoy that movie!! Bye have a nice day"}
+{"pred": "System: Have you seen <movie>?", "label": "System: Fine and you?"}
+{"pred": "System: I can!", "label": "System: Well there's a lot to see Did you see <movie>??"}
+{"pred": "System: I have not seen that one. I have seen <movie>", "label": "System: <movie> and <movie> are pretty good too"}
+{"pred": "System: You too", "label": "System: You're welcome bye"}
+{"pred": "System: I have not seen that one yet. I have seen <movie>", "label": "System: Well there's a lot of movies like <movie> and <movie> <movie> is pretty good too!!"}
+{"pred": "System: I have not seen that one. I hope you enjoy it!", "label": "System: You should watch those movies"}
+{"pred": "System: I have not seen <movie> but I have seen it", "label": "System: Yes <movie> is my favorite!!"}
+{"pred": "System: Bye", "label": "System: Have a good day, bye"}
+{"pred": "System: I have seen <movie>", "label": "System: yes do you watch <movie>"}
+{"pred": "System: <movie> is a good one too", "label": "System: o sorry sorry"}
+{"pred": "System: <movie>", "label": "System: yes yes <movie> thas movie is very good"}
+{"pred": "System: <movie> is a good one", "label": "System: do you watch movies like <movie>"}
+{"pred": "System: bye", "label": "System: your welcom good bye"}
+{"pred": "System: I have seen <movie>", "label": "System: yes do you watch <movie> or <movie> movies of quality you watch movies of action"}
+{"pred": "System: <movie> is a good one", "label": "System: yes <movie> is of horror but i very good thase movie or <movie>"}
+{"pred": "System: you're welcome", "label": "System: good you are a love thanks good bye"}
+{"pred": "System: ok how about <movie>", "label": "System: yes do you watch movies of horror or action or humor hello"}
+{"pred": "System: have you seen <movie>", "label": "System: <movie> is very fine or <movie>"}
+{"pred": "System: <movie> is a good one", "label": "System: movies of quality <movie> ¿¿"}
+{"pred": "System: you will like <movie>", "label": "System: thanks have a great day"}
+{"pred": "System: bye", "label": "System: good bye"}
+{"pred": "System: Hi, what kind of movies do you like?", "label": "System: Hi"}
+{"pred": "System: Have you seen <movie>?", "label": "System: <movie> is a good one <movie> too"}
+{"pred": "System: <movie> is a great movie", "label": "System: <movie> is pretty good!!"}
+{"pred": "System: <movie> is a great movie", "label": "System: <movie> is a great movie too!!"}
+{"pred": "System: bye", "label": "System: Bye"}
+{"pred": "System: <movie>", "label": "System: yes like <movie> or <movie>"}
+{"pred": "System: <movie> is a good one", "label": "System: ye i have very like <movie>"}
+{"pred": "System: you too", "label": "System: or <movie> your welcom good bye"}
+{"pred": "System: I have never seen <movie>", "label": "System: yes like <movie> is a good movie or <movie> is actuality"}
+{"pred": "System: <movie> is a great movie", "label": "System: yes like <movie> is very good thas movie"}
+{"pred": "System: <movie> is a great movie", "label": "System: or <movie> ok thanks good bye"}
+{"pred": "System: bye", "label": "System: bye"}
+{"pred": "System: I would recommend <movie>", "label": "System: well I can recommend you <movie>"}
+{"pred": "System: <movie> is a good one", "label": "System: I'm not very fond of those movies but I recommend this action <movie>"}
+{"pred": "System: <movie> is a good one", "label": "System: if I understand you, but I can recommend this to <movie> yes"}
+{"pred": "System: bye", "label": "System: bye"}
+{"pred": "System: Hello", "label": "System: hi"}
+{"pred": "System: <movie> is a good one", "label": "System: is good <movie>"}
+{"pred": "System: <movie> is a good one", "label": "System: <movie> and <movie> is good movie"}
+{"pred": "System: <movie> is a good movie.", "label": "System: good bye"}
+{"pred": "System: what kind of movies do you like?", "label": "System: good i can recommend <movie>"}
+{"pred": "System: <movie> is a good one", "label": "System: I can also recommend you <movie>"}
+{"pred": "System: <movie> is a good one", "label": "System: I will recommend <movie>"}
+{"pred": "System: <movie> is a good one", "label": "System: this movie that will recommend you is very good too <movie>"}
+{"pred": "System: bye", "label": "System: Ok, bro, it was a pleasure"}
+{"pred": "System: Hello, what kind of movies do you like?", "label": "System: hola hello"}
+{"pred": "System: what kind of movies do you like?", "label": "System: <movie> is good"}
+{"pred": "System: <movie>", "label": "System: this is also good <movie>"}
+{"pred": "System: <movie>", "label": "System: is the best but good, try this <movie>"}
+{"pred": "System: <movie>", "label": "System: This is the last one that I can tell you, I have to go <movie>"}
+{"pred": "System: you are welcome", "label": "System: goodbye, it was a pleasure"}
+{"pred": "System: Hello, what kind of movies do you like?", "label": "System: hi"}
+{"pred": "System: <movie> is a good one", "label": "System: This is good, although something good <movie>"}
+{"pred": "System: <movie> is a classic", "label": "System: this <movie>"}
+{"pred": "System: <movie> is a good one", "label": "System: <movie> try this one too"}
+{"pred": "System: I hope you enjoy the movies", "label": "System: <movie> this one of the spell is also good"}
+{"pred": "System: You're welcome", "label": "System: good bye"}
+{"pred": "System: <movie> is a good one", "label": "System: well I can recommend you <movie>"}
+{"pred": "System: <movie> is a good one", "label": "System: well I can also recommend you <movie>"}
+{"pred": "System: <movie> is another good one", "label": "System: my favorite movie is this and I recommend it bro <movie>"}
+{"pred": "System: yes, it was a great movie", "label": "System: I can recommend you <movie>"}
+{"pred": "System: bye", "label": "System: nothing bro, see you later"}
+{"pred": "System: what kind of movies do you like?", "label": "System: I love this <movie>"}
+{"pred": "System: <movie> is a good one", "label": "System: I understand, maybe you like it <movie>"}
+{"pred": "System: ok, I also recommend <movie>", "label": "System: or maybe <movie>"}
+{"pred": "System: <movie>", "label": "System: I agree"}
+{"pred": "System: <movie> is a good one", "label": "System: I like this <movie> it was a pleasure good bye"}
+{"pred": "System: what type of movies do you like?", "label": "System: <movie> well I like it a lot"}
+{"pred": "System: <movie> is a good one", "label": "System: or I can also recommend this <movie>"}
+{"pred": "System: <movie> is also a good one", "label": "System: if you want to see another one it can also be <movie>"}
+{"pred": "System: <movie> is a good one", "label": "System: and another very good one would be <movie>"}
+{"pred": "System: you are welcome", "label": "System: ok friend of nothing, see you later goodbye"}
+{"pred": "System: Hello, what kind of movies do you like?", "label": "System: hello brother"}
+{"pred": "System: <movie>", "label": "System: ok.. te recomiendo <movie>"}
+{"pred": "System: <movie> is a good one", "label": "System: Okay... I recommend you <movie> That's very funny... I also recommend you <movie> That's very funny... I also recommend you <movie>"}
+{"pred": "System: I also liked <movie>", "label": "System: another very comical and sentimental is <movie>"}
+{"pred": "System: <movie>", "label": "System: I'm crazy waiting for the premiere of <movie>"}
+{"pred": "System: <movie>", "label": "System: I recommend it.. Sure it will be better than the previous"}
+{"pred": "System: bye", "label": "System: ok, bye"}
+{"pred": "System: I would recommend <movie>", "label": "System: How are you bro? I recommend this <movie>"}
+{"pred": "System: <movie> is a good one", "label": "System: yes bro i can also recommend this <movie>"}
+{"pred": "System: <movie> is a good one", "label": "System: if bro and tell me what else can I help you..."}
+{"pred": "System: I have not seen that one yet. I have seen <movie> and <movie>", "label": "System: oh man, I'm excellente ok let me see <movie> is damn good most people have seen that though oh, and it has ethan hawke in it I wasn't even thinking of that"}
+{"pred": "System: <movie> is a good one", "label": "System: <movie> is excellent 50 cent kills it"}
+{"pred": "System: <movie> is a good one too", "label": "System: give me a sec here. I trying to think of something different"}
+{"pred": "System: <movie> is a good one", "label": "System: <movie> the one with jeremy renner is a little different I like him I was thinking of <movie> but yeah, that's about all I have"}
+{"pred": "System: bye", "label": "System: no prob. have a good night"}
+{"pred": "System: I love <movie>", "label": "System: I haven't seen that. what kind of genre is that?"}
+{"pred": "System: <movie> is a good one", "label": "System: um ok let me think <movie> I'm kind of joking there <movie> is a good comedie"}
+{"pred": "System: <movie> is a classic", "label": "System: I don't know any musical comedies"}
+{"pred": "System: <movie> is a classic", "label": "System: yeah it has barbara striesand in it"}
+{"pred": "System: <movie> is a classic", "label": "System: <movie> is my fav of all time <movie> is funny but thats all I have really sorry I couldn't be more help"}
+{"pred": "System: no problem have a good day", "label": "System: oh yeah check it out chapelle is in it"}
+{"pred": "System: bye", "label": "System: its hilarious you have a good night"}
+{"pred": "System: oh yes I have seen that one", "label": "System: you have to use something other than the purge"}
+{"pred": "System: <movie> is a good one", "label": "System: its like the 10th time fo rthe purge. not tring to be a dick or anything ok well I like <movie> that's my fav comic book movie <movie> the ones with michael keaton all of them are pretty good and tim burton directs them he did <movie> he's really a unique character and he's married to helena bonham carter. the chick from <movie>"}
+{"pred": "System: I have seen <movie>", "label": "System: so, yeah thats about all I have you have a good night"}
+{"pred": "System: bye", "label": "System: It's good. different"}
+{"pred": "System: <movie>", "label": "System: I can recommend this movie very good <movie>"}
+{"pred": "System: <movie> is a good movie", "label": "System: If not, I can also recommend you this <movie>"}
+{"pred": "System: <movie> is a good one", "label": "System: if so, but I can recommend this one that is also very good <movie>"}
+{"pred": "System: you too", "label": "System: see you later I have to go"}
+{"pred": "System: ok", "label": "System: <movie> It is very good and fun"}
+{"pred": "System: <movie> is a good one", "label": "System: <movie> one of the best"}
+{"pred": "System: <movie> is good too", "label": "System: <movie> ç a movie full of bats"}
+{"pred": "System: <movie>", "label": "System: <movie> is good"}
+{"pred": "System: bye", "label": "System: It was a pleasure to have you recommended these movies that you have a good day until then god bye"}
+{"pred": "System: I'm doing well, thanks for asking.", "label": "System: fine beautiful <movie> is good movie"}
+{"pred": "System: <movie> was a good movie.", "label": "System: <movie>"}
+{"pred": "System: <movie>", "label": "System: <movie> is good i love <movie> I recommend it is very good"}
+{"pred": "System: <movie> is a good one", "label": "System: bye"}
+{"pred": "System: I'm doing great, thanks for asking.", "label": "System: fine"}
+{"pred": "System: I like <movie> and <movie>", "label": "System: <movie> <movie> is good"}
+{"pred": "System: <movie> is a good one", "label": "System: <movie>"}
+{"pred": "System: <movie>", "label": "System: <movie> good bye I hope you liked this recommendation until later"}
+{"pred": "System: what kind of movies do you like?", "label": "System: Fine and you?"}
+{"pred": "System: What kind of movies do you like?", "label": "System: Heyyyyyyy"}
+{"pred": "System: <movie> <movie>", "label": "System: What movies would you like to see? Sure. <movie> is very good gay film"}
+{"pred": "System: <movie> is a good one", "label": "System: <movie> Is good"}
+{"pred": "System: <movie> is another good one", "label": "System: Of course, I like them as well as you"}
+{"pred": "System: <movie> is a good one", "label": "System: <movie> and <movie> They are a bit old but I know you will love it I hope you liked my recommendations friend"}
+{"pred": "System: bye", "label": "System: Bye"}
+{"pred": "System: have you seen <movie>?", "label": "System: <movie> thats my fav <movie> a great heist movie <movie>"}
+{"pred": "System: <movie> is a good one", "label": "System: I just saw that. I was really happy with it <movie> is a classic"}
+{"pred": "System: <movie> is a great movie", "label": "System: I think you'd really like that"}
+{"pred": "System: <movie> is a great movie", "label": "System: that's all I have you have a nice day"}
+{"pred": "System: what about your family?", "label": "System: fine <movie> is good movie"}
+{"pred": "System: <movie>", "label": "System: <movie> very funny"}
+{"pred": "System: <movie>", "label": "System: <movie>"}
+{"pred": "System: <movie>", "label": "System: They are very good movies highly recommended <movie>"}
+{"pred": "System: <movie>", "label": "System: Have a nice day and it was a pleasure to have you recommended these movies until later good bye"}
+{"pred": "System: ok, I'm good.", "label": "System: I'm good <movie> is drama with a little bit of crime in it give me a sec, I have to think"}
+{"pred": "System: <movie> is a good one", "label": "System: I don't know a lot of drama movies <movie> won an oscar even though it was low budget"}
+{"pred": "System: <movie> is a good movie.", "label": "System: <movie> lol I'm not sure <movie> has some drama elements in it that all I got. i can't really help you any more than that you have a good day"}
+{"pred": "System: what kind of movies do you like?", "label": "System: How can I help you today?"}
+{"pred": "System: Have you seen <movie>?", "label": "System: Well, the perfect movie is <movie>"}
+{"pred": "System: <movie> is a good one", "label": "System: <movie>, <movie> and <movie> Are my favorite movies"}
+{"pred": "System: <movie> is a good one", "label": "System: I really love those movies, you'll be happy if you see them you should also see <movie>"}
+{"pred": "System: bye", "label": "System: I hope I have helped you friend, bye"}
+{"pred": "System: what kind of movies do you like?", "label": "System: how are you I am very good recommending a good movie"}
+{"pred": "System: I'm good", "label": "System: fine <movie> is good movie"}
+{"pred": "System: <movie> is a good one", "label": "System: <movie> is very funny"}
+{"pred": "System: <movie> is a good one", "label": "System: <movie>"}
+{"pred": "System: yes, I have to see it", "label": "System: yes"}
+{"pred": "System: <movie> is a good one", "label": "System: <movie>"}
+{"pred": "System: <movie> is a good one", "label": "System: very recomend"}
+{"pred": "System: bye", "label": "System: <movie>"}
+{"pred": "System: bye", "label": "System: It was a pleasure to share movies with you that have a good day good bye"}

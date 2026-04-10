@@ -1,0 +1,815 @@
+nohup: ignoring input
+The following values were not passed to `accelerate launch` and had defaults used instead:
+	`--num_processes` was set to a value of `1`
+	`--num_machines` was set to a value of `1`
+	`--mixed_precision` was set to a value of `'no'`
+	`--dynamo_backend` was set to a value of `'no'`
+To avoid this warning pass in values for each of the problematic parameters or run `accelerate config`.
+2026-04-03 18:33:48.991 | INFO     | __main__:<module>:89 - Distributed environment: NO
+Num processes: 1
+Process index: 0
+Local process index: 0
+Device: cuda
+
+Mixed precision type: no
+
+2026-04-03 18:33:48.991 | INFO     | __main__:<module>:90 - {'seed': 42, 'output_dir': None, 'debug': False, 'dataset': 'redial', 'split': 'valid', 'num_workers': 0, 'context_max_length': 200, 'resp_max_length': 183, 'entity_max_length': 32, 'prompt_max_length': 200, 'tokenizer': 'microsoft/DialoGPT-small', 'ignore_pad_token_for_loss': False, 'text_tokenizer': 'roberta-base', 'model': 'microsoft/DialoGPT-small', 'max_gen_len': 50, 'text_encoder': 'roberta-base', 'prompt_encoder': '/root/autodl-tmp/UniCRS-main/output_conv/final', 'n_prefix_conv': 20, 'num_bases': 8, 'num_train_epochs': 10, 'max_train_steps': None, 'per_device_train_batch_size': 4, 'per_device_eval_batch_size': 64, 'gradient_accumulation_steps': 1, 'learning_rate': 1e-05, 'weight_decay': 0.01, 'max_grad_norm': None, 'num_warmup_steps': 10000, 'fp16': False, 'use_wandb': False, 'entity': None, 'project': None, 'name': None, 'log_all': False}
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /microsoft/DialoGPT-small/resolve/main/tokenizer_config.json (Caused by ConnectTimeoutError(<HTTPSConnection(host='huggingface.co', port=443) at 0x7f1d762734f0>, 'Connection to huggingface.co timed out. (connect timeout=10)'))"), '(Request ID: 261274ff-a889-49fe-b1ec-7af7154228b2)')' thrown while requesting HEAD https://huggingface.co/microsoft/DialoGPT-small/resolve/main/tokenizer_config.json
+loading file vocab.json from cache at /root/.cache/huggingface/hub/models--microsoft--DialoGPT-small/snapshots/49c537161a457d5256512f9d2d38a87d81ae0f0e/vocab.json
+loading file merges.txt from cache at /root/.cache/huggingface/hub/models--microsoft--DialoGPT-small/snapshots/49c537161a457d5256512f9d2d38a87d81ae0f0e/merges.txt
+loading file tokenizer.json from cache at None
+loading file added_tokens.json from cache at None
+loading file special_tokens_map.json from cache at None
+loading file tokenizer_config.json from cache at /root/.cache/huggingface/hub/models--microsoft--DialoGPT-small/snapshots/49c537161a457d5256512f9d2d38a87d81ae0f0e/tokenizer_config.json
+Assigning <pad> to the pad_token key of the tokenizer
+Assigning ['<movie>'] to the additional_special_tokens key of the tokenizer
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /microsoft/DialoGPT-small/resolve/main/config.json (Caused by ConnectTimeoutError(<HTTPSConnection(host='huggingface.co', port=443) at 0x7f1d58d460e0>, 'Connection to huggingface.co timed out. (connect timeout=10)'))"), '(Request ID: c0e83692-3374-4ef4-9ad6-9943828afd74)')' thrown while requesting HEAD https://huggingface.co/microsoft/DialoGPT-small/resolve/main/config.json
+loading configuration file config.json from cache at /root/.cache/huggingface/hub/models--microsoft--DialoGPT-small/snapshots/49c537161a457d5256512f9d2d38a87d81ae0f0e/config.json
+Model config GPT2Config {
+  "activation_function": "gelu_new",
+  "architectures": [
+    "GPT2LMHeadModel"
+  ],
+  "attn_pdrop": 0.1,
+  "bos_token_id": 50256,
+  "embd_pdrop": 0.1,
+  "eos_token_id": 50256,
+  "initializer_range": 0.02,
+  "layer_norm_epsilon": 1e-05,
+  "model_type": "gpt2",
+  "n_ctx": 1024,
+  "n_embd": 768,
+  "n_head": 12,
+  "n_inner": null,
+  "n_layer": 12,
+  "n_positions": 1024,
+  "reorder_and_upcast_attn": false,
+  "resid_pdrop": 0.1,
+  "scale_attn_by_inverse_layer_idx": false,
+  "scale_attn_weights": true,
+  "summary_activation": null,
+  "summary_first_dropout": 0.1,
+  "summary_proj_to_labels": true,
+  "summary_type": "cls_index",
+  "summary_use_proj": true,
+  "task_specific_params": {
+    "conversational": {
+      "max_length": 1000
+    }
+  },
+  "transformers_version": "4.28.0",
+  "use_cache": true,
+  "vocab_size": 50257
+}
+
+loading weights file model.safetensors from cache at /root/.cache/huggingface/hub/models--microsoft--DialoGPT-small/snapshots/49c537161a457d5256512f9d2d38a87d81ae0f0e/model.safetensors
+Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "transformers_version": "4.28.0"
+}
+
+All model checkpoint weights were used when initializing PromptGPT2forCRS.
+
+All the weights of PromptGPT2forCRS were initialized from the model checkpoint at microsoft/DialoGPT-small.
+If your task is similar to the task the model of the checkpoint was trained on, you can already use PromptGPT2forCRS for predictions without further training.
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /microsoft/DialoGPT-small/resolve/main/generation_config.json (Caused by ConnectTimeoutError(<HTTPSConnection(host='huggingface.co', port=443) at 0x7f1d52bb5360>, 'Connection to huggingface.co timed out. (connect timeout=10)'))"), '(Request ID: 33f254cb-41a7-4647-8108-d1dbed9edce0)')' thrown while requesting HEAD https://huggingface.co/microsoft/DialoGPT-small/resolve/main/generation_config.json
+loading configuration file generation_config.json from cache at /root/.cache/huggingface/hub/models--microsoft--DialoGPT-small/snapshots/49c537161a457d5256512f9d2d38a87d81ae0f0e/generation_config.json
+Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "transformers_version": "4.28.0"
+}
+
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /roberta-base/resolve/main/tokenizer_config.json (Caused by ConnectTimeoutError(<HTTPSConnection(host='huggingface.co', port=443) at 0x7f1d52bb6530>, 'Connection to huggingface.co timed out. (connect timeout=10)'))"), '(Request ID: b90afc90-b7e0-40c2-acf2-09ee5dcb014b)')' thrown while requesting HEAD https://huggingface.co/roberta-base/resolve/main/tokenizer_config.json
+loading configuration file config.json from cache at /root/.cache/huggingface/hub/models--roberta-base/snapshots/e2da8e2f811d1448a5b465c236feacd80ffbac7b/config.json
+Model config RobertaConfig {
+  "_name_or_path": "roberta-base",
+  "architectures": [
+    "RobertaForMaskedLM"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "bos_token_id": 0,
+  "classifier_dropout": null,
+  "eos_token_id": 2,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-05,
+  "max_position_embeddings": 514,
+  "model_type": "roberta",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 1,
+  "position_embedding_type": "absolute",
+  "transformers_version": "4.28.0",
+  "type_vocab_size": 1,
+  "use_cache": true,
+  "vocab_size": 50265
+}
+
+loading file vocab.json from cache at /root/.cache/huggingface/hub/models--roberta-base/snapshots/e2da8e2f811d1448a5b465c236feacd80ffbac7b/vocab.json
+loading file merges.txt from cache at /root/.cache/huggingface/hub/models--roberta-base/snapshots/e2da8e2f811d1448a5b465c236feacd80ffbac7b/merges.txt
+loading file tokenizer.json from cache at /root/.cache/huggingface/hub/models--roberta-base/snapshots/e2da8e2f811d1448a5b465c236feacd80ffbac7b/tokenizer.json
+loading file added_tokens.json from cache at None
+loading file special_tokens_map.json from cache at None
+loading file tokenizer_config.json from cache at /root/.cache/huggingface/hub/models--roberta-base/snapshots/e2da8e2f811d1448a5b465c236feacd80ffbac7b/tokenizer_config.json
+loading configuration file config.json from cache at /root/.cache/huggingface/hub/models--roberta-base/snapshots/e2da8e2f811d1448a5b465c236feacd80ffbac7b/config.json
+Model config RobertaConfig {
+  "_name_or_path": "roberta-base",
+  "architectures": [
+    "RobertaForMaskedLM"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "bos_token_id": 0,
+  "classifier_dropout": null,
+  "eos_token_id": 2,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-05,
+  "max_position_embeddings": 514,
+  "model_type": "roberta",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 1,
+  "position_embedding_type": "absolute",
+  "transformers_version": "4.28.0",
+  "type_vocab_size": 1,
+  "use_cache": true,
+  "vocab_size": 50265
+}
+
+Assigning ['<movie>'] to the additional_special_tokens key of the tokenizer
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /roberta-base/resolve/main/config.json (Caused by ConnectTimeoutError(<HTTPSConnection(host='huggingface.co', port=443) at 0x7f1d532b8340>, 'Connection to huggingface.co timed out. (connect timeout=10)'))"), '(Request ID: 5fd543f5-51de-456b-807e-e1891e406022)')' thrown while requesting HEAD https://huggingface.co/roberta-base/resolve/main/config.json
+loading configuration file config.json from cache at /root/.cache/huggingface/hub/models--roberta-base/snapshots/e2da8e2f811d1448a5b465c236feacd80ffbac7b/config.json
+Model config RobertaConfig {
+  "_name_or_path": "roberta-base",
+  "architectures": [
+    "RobertaForMaskedLM"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "bos_token_id": 0,
+  "classifier_dropout": null,
+  "eos_token_id": 2,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-05,
+  "max_position_embeddings": 514,
+  "model_type": "roberta",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 1,
+  "position_embedding_type": "absolute",
+  "transformers_version": "4.28.0",
+  "type_vocab_size": 1,
+  "use_cache": true,
+  "vocab_size": 50265
+}
+
+loading weights file model.safetensors from cache at /root/.cache/huggingface/hub/models--roberta-base/snapshots/e2da8e2f811d1448a5b465c236feacd80ffbac7b/model.safetensors
+Some weights of the model checkpoint at roberta-base were not used when initializing RobertaModel: ['lm_head.layer_norm.weight', 'lm_head.bias', 'lm_head.layer_norm.bias', 'lm_head.dense.weight', 'lm_head.dense.bias']
+- This IS expected if you are initializing RobertaModel from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing RobertaModel from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+All the weights of RobertaModel were initialized from the model checkpoint at roberta-base.
+If your task is similar to the task the model of the checkpoint was trained on, you can already use RobertaModel for predictions without further training.
+/root/autodl-tmp/UniCRS-main/src/model_prompt.py:143: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  torch.load(load_path, map_location=torch.device('cpu')), strict=False
+['edge_index', 'edge_type'] []
+  0%|          | 0/6253 [00:00<?, ?it/s]/root/miniconda3/envs/fiup/lib/python3.10/site-packages/transformers/tokenization_utils_base.py:3596: UserWarning: `as_target_tokenizer` is deprecated and will be removed in v5 of Transformers. You can tokenize your labels by using the argument `text_target` of the regular `__call__` method (either in the same call as your input texts if you use the same keyword arguments, or in a separate call.
+  warnings.warn(
+  2%|▏         | 104/6253 [00:00<00:05, 1034.82it/s]  4%|▎         | 220/6253 [00:00<00:05, 1104.24it/s]  5%|▌         | 331/6253 [00:00<00:05, 1098.85it/s]  7%|▋         | 454/6253 [00:00<00:05, 1150.03it/s]  9%|▉         | 570/6253 [00:00<00:05, 1095.50it/s] 11%|█         | 680/6253 [00:00<00:05, 1086.57it/s] 13%|█▎        | 797/6253 [00:00<00:04, 1111.96it/s] 15%|█▍        | 916/6253 [00:00<00:04, 1133.79it/s] 17%|█▋        | 1042/6253 [00:00<00:04, 1169.33it/s] 19%|█▊        | 1160/6253 [00:01<00:04, 1140.82it/s] 20%|██        | 1275/6253 [00:01<00:04, 1141.83it/s] 22%|██▏       | 1390/6253 [00:01<00:04, 1141.93it/s] 24%|██▍       | 1510/6253 [00:01<00:04, 1158.31it/s] 26%|██▌       | 1626/6253 [00:01<00:04, 1131.81it/s] 28%|██▊       | 1740/6253 [00:01<00:04, 1113.53it/s] 30%|██▉       | 1852/6253 [00:01<00:04, 1100.09it/s] 31%|███▏      | 1963/6253 [00:01<00:03, 1082.04it/s] 33%|███▎      | 2087/6253 [00:01<00:03, 1127.16it/s] 36%|███▌      | 2236/6253 [00:01<00:03, 1230.86it/s] 38%|███▊      | 2400/6253 [00:02<00:02, 1350.65it/s] 41%|████      | 2578/6253 [00:02<00:02, 1474.90it/s] 44%|████▍     | 2760/6253 [00:02<00:02, 1576.52it/s] 47%|████▋     | 2947/6253 [00:02<00:01, 1661.85it/s] 50%|█████     | 3127/6253 [00:02<00:01, 1701.05it/s]Token indices sequence length is longer than the specified maximum sequence length for this model (584 > 512). Running this sequence through the model will result in indexing errors
+ 53%|█████▎    | 3319/6253 [00:02<00:01, 1759.98it/s] 56%|█████▋    | 3522/6253 [00:02<00:01, 1837.72it/s] 59%|█████▉    | 3714/6253 [00:02<00:01, 1861.12it/s] 62%|██████▏   | 3901/6253 [00:02<00:01, 1829.77it/s] 65%|██████▌   | 4086/6253 [00:02<00:01, 1832.02it/s] 68%|██████▊   | 4270/6253 [00:03<00:01, 1832.83it/s] 72%|███████▏  | 4479/6253 [00:03<00:00, 1909.07it/s] 75%|███████▍  | 4671/6253 [00:03<00:00, 1880.82it/s] 78%|███████▊  | 4860/6253 [00:03<00:00, 1835.44it/s] 81%|████████  | 5044/6253 [00:03<00:00, 1822.73it/s] 84%|████████▎ | 5229/6253 [00:03<00:00, 1828.88it/s] 87%|████████▋ | 5416/6253 [00:03<00:00, 1840.51it/s] 90%|████████▉ | 5601/6253 [00:03<00:00, 1806.55it/s] 93%|█████████▎| 5790/6253 [00:03<00:00, 1827.87it/s] 96%|█████████▌| 5973/6253 [00:03<00:00, 1827.74it/s] 98%|█████████▊| 6156/6253 [00:04<00:00, 1782.12it/s]100%|██████████| 6253/6253 [00:04<00:00, 1505.12it/s]
+  0%|          | 0/89 [00:00<?, ?it/s]You're using a GPT2TokenizerFast tokenizer. Please note that with a fast tokenizer, using the `__call__` method is faster than using a method to encode the text followed by a call to the `pad` method to get a padded encoding.
+/root/miniconda3/envs/fiup/lib/python3.10/site-packages/transformers/tokenization_utils_base.py:2372: UserWarning: `max_length` is ignored when `padding`=`True` and there is no truncation strategy. To pad to max length, use `padding='max_length'`.
+  warnings.warn(
+You're using a RobertaTokenizerFast tokenizer. Please note that with a fast tokenizer, using the `__call__` method is faster than using a method to encode the text followed by a call to the `pad` method to get a padded encoding.
+Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+/root/miniconda3/envs/fiup/lib/python3.10/site-packages/transformers/generation/utils.py:1219: UserWarning: You have modified the pretrained model configuration to control generation. This is a deprecated strategy to control generation and will be removed soon, in a future version. Please use a generation configuration file (see https://huggingface.co/docs/transformers/main_classes/text_generation)
+  warnings.warn(
+  0%|          | 0/89 [00:00<?, ?it/s]
+Traceback (most recent call last):
+  File "/root/autodl-tmp/UniCRS-main/src/infer_conv.py", line 182, in <module>
+    gen_seqs = accelerator.unwrap_model(model).generate(
+  File "/root/miniconda3/envs/fiup/lib/python3.10/site-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+    return func(*args, **kwargs)
+  File "/root/miniconda3/envs/fiup/lib/python3.10/site-packages/transformers/generation/utils.py", line 1437, in generate
+    return self.greedy_search(
+  File "/root/miniconda3/envs/fiup/lib/python3.10/site-packages/transformers/generation/utils.py", line 2248, in greedy_search
+    outputs = self(
+  File "/root/miniconda3/envs/fiup/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/root/miniconda3/envs/fiup/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/root/autodl-tmp/UniCRS-main/src/model_gpt2.py", line 638, in forward
+    transformer_outputs = self.transformer(
+  File "/root/miniconda3/envs/fiup/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/root/miniconda3/envs/fiup/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/root/autodl-tmp/UniCRS-main/src/model_gpt2.py", line 484, in forward
+    outputs = block(
+  File "/root/miniconda3/envs/fiup/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/root/miniconda3/envs/fiup/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/root/autodl-tmp/UniCRS-main/src/model_gpt2.py", line 257, in forward
+    feed_forward_hidden_states = self.mlp(hidden_states)
+  File "/root/miniconda3/envs/fiup/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/root/miniconda3/envs/fiup/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/root/miniconda3/envs/fiup/lib/python3.10/site-packages/transformers/models/gpt2/modeling_gpt2.py", line 354, in forward
+    hidden_states = self.act(hidden_states)
+  File "/root/miniconda3/envs/fiup/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/root/miniconda3/envs/fiup/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/root/miniconda3/envs/fiup/lib/python3.10/site-packages/transformers/activations.py", line 56, in forward
+    return 0.5 * input * (1.0 + torch.tanh(math.sqrt(2.0 / math.pi) * (input + 0.044715 * torch.pow(input, 3.0))))
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 150.00 MiB. GPU 0 has a total capacity of 23.52 GiB of which 13.38 MiB is free. Process 9844 has 19.07 GiB memory in use. Including non-PyTorch memory, this process has 4.42 GiB memory in use. Of the allocated memory 3.21 GiB is allocated by PyTorch, and 828.15 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+Traceback (most recent call last):
+  File "/root/miniconda3/envs/fiup/bin/accelerate", line 6, in <module>
+    sys.exit(main())
+  File "/root/miniconda3/envs/fiup/lib/python3.10/site-packages/accelerate/commands/accelerate_cli.py", line 50, in main
+    args.func(args)
+  File "/root/miniconda3/envs/fiup/lib/python3.10/site-packages/accelerate/commands/launch.py", line 1405, in launch_command
+    simple_launcher(args)
+  File "/root/miniconda3/envs/fiup/lib/python3.10/site-packages/accelerate/commands/launch.py", line 993, in simple_launcher
+    raise subprocess.CalledProcessError(returncode=process.returncode, cmd=cmd)
+subprocess.CalledProcessError: Command '['/root/miniconda3/envs/fiup/bin/python3.10', 'infer_conv.py', '--dataset', 'redial', '--split', 'valid', '--tokenizer', 'microsoft/DialoGPT-small', '--model', 'microsoft/DialoGPT-small', '--text_tokenizer', 'roberta-base', '--text_encoder', 'roberta-base', '--n_prefix_conv', '20', '--prompt_encoder', '/root/autodl-tmp/UniCRS-main/output_conv/final', '--per_device_eval_batch_size', '64', '--context_max_length', '200', '--resp_max_length', '183', '--prompt_max_length', '200', '--entity_max_length', '32']' returned non-zero exit status 1.
+"eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 22%|██▏       | 20/89 [01:39<05:00,  4.35s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 24%|██▎       | 21/89 [01:42<04:40,  4.13s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 25%|██▍       | 22/89 [01:47<04:44,  4.24s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 26%|██▌       | 23/89 [01:51<04:38,  4.21s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 27%|██▋       | 24/89 [01:54<04:05,  3.78s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 28%|██▊       | 25/89 [01:59<04:30,  4.22s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 29%|██▉       | 26/89 [02:06<05:17,  5.04s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 30%|███       | 27/89 [02:10<04:49,  4.68s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 31%|███▏      | 28/89 [02:14<04:38,  4.57s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 33%|███▎      | 29/89 [02:19<04:46,  4.78s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 34%|███▎      | 30/89 [02:24<04:33,  4.64s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 35%|███▍      | 31/89 [02:28<04:23,  4.55s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 36%|███▌      | 32/89 [02:32<04:07,  4.34s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 37%|███▋      | 33/89 [02:36<03:59,  4.28s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 38%|███▊      | 34/89 [02:39<03:37,  3.96s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 39%|███▉      | 35/89 [02:45<03:57,  4.40s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 40%|████      | 36/89 [02:52<04:47,  5.42s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 42%|████▏     | 37/89 [02:57<04:34,  5.29s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 43%|████▎     | 38/89 [03:01<03:58,  4.67s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 44%|████▍     | 39/89 [03:04<03:34,  4.29s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 45%|████▍     | 40/89 [03:07<03:15,  3.99s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 46%|████▌     | 41/89 [03:11<03:10,  3.98s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 47%|████▋     | 42/89 [03:15<03:04,  3.92s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 48%|████▊     | 43/89 [03:18<02:51,  3.73s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 49%|████▉     | 44/89 [03:24<03:13,  4.30s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 51%|█████     | 45/89 [03:28<03:12,  4.38s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 52%|█████▏    | 46/89 [03:32<02:56,  4.10s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 53%|█████▎    | 47/89 [03:36<02:48,  4.00s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 54%|█████▍    | 48/89 [03:39<02:40,  3.90s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 55%|█████▌    | 49/89 [03:43<02:37,  3.93s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 56%|█████▌    | 50/89 [03:48<02:38,  4.06s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 57%|█████▋    | 51/89 [03:54<02:54,  4.60s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 58%|█████▊    | 52/89 [03:58<02:43,  4.41s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 60%|█████▉    | 53/89 [04:01<02:33,  4.28s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 61%|██████    | 54/89 [04:05<02:20,  4.02s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 62%|██████▏   | 55/89 [04:10<02:27,  4.35s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 63%|██████▎   | 56/89 [04:16<02:34,  4.69s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 64%|██████▍   | 57/89 [04:19<02:19,  4.37s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 65%|██████▌   | 58/89 [04:24<02:20,  4.53s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 66%|██████▋   | 59/89 [04:29<02:15,  4.53s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 67%|██████▋   | 60/89 [04:33<02:08,  4.42s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 69%|██████▊   | 61/89 [04:36<01:57,  4.19s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 70%|██████▉   | 62/89 [04:41<01:54,  4.24s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 71%|███████   | 63/89 [04:45<01:53,  4.37s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 72%|███████▏  | 64/89 [04:50<01:47,  4.30s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 73%|███████▎  | 65/89 [04:53<01:36,  4.03s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 74%|███████▍  | 66/89 [04:56<01:28,  3.85s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 75%|███████▌  | 67/89 [05:02<01:35,  4.33s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 76%|███████▋  | 68/89 [05:06<01:30,  4.29s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 78%|███████▊  | 69/89 [05:12<01:34,  4.73s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 79%|███████▊  | 70/89 [05:16<01:25,  4.50s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 80%|███████▉  | 71/89 [05:20<01:20,  4.47s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 81%|████████  | 72/89 [05:24<01:10,  4.15s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 82%|████████▏ | 73/89 [05:28<01:05,  4.10s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 83%|████████▎ | 74/89 [05:31<00:59,  4.00s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 84%|████████▍ | 75/89 [05:34<00:52,  3.73s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 85%|████████▌ | 76/89 [05:38<00:46,  3.58s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 87%|████████▋ | 77/89 [05:42<00:44,  3.69s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 88%|████████▊ | 78/89 [05:46<00:42,  3.88s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 89%|████████▉ | 79/89 [05:49<00:36,  3.65s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 90%|████████▉ | 80/89 [05:53<00:34,  3.85s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 91%|█████████ | 81/89 [05:57<00:29,  3.69s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 92%|█████████▏| 82/89 [06:00<00:25,  3.61s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 93%|█████████▎| 83/89 [06:03<00:20,  3.44s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 94%|█████████▍| 84/89 [06:07<00:17,  3.46s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 96%|█████████▌| 85/89 [06:12<00:16,  4.01s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 97%|█████████▋| 86/89 [06:16<00:12,  4.06s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 98%|█████████▊| 87/89 [06:22<00:09,  4.69s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+ 99%|█████████▉| 88/89 [06:27<00:04,  4.67s/it]Generate config GenerationConfig {
+  "_from_model_config": true,
+  "bos_token_id": 50256,
+  "eos_token_id": 50256,
+  "pad_token_id": 50257,
+  "transformers_version": "4.28.0"
+}
+
+100%|██████████| 89/89 [06:28<00:00,  3.47s/it]100%|██████████| 89/89 [06:28<00:00,  4.36s/it]
+2026-04-03 18:39:39.947 | INFO     | __main__:<module>:199 - {'valid/bleu@1': 0.20109869804902508, 'valid/bleu@2': 0.058127312835065885, 'valid/bleu@3': 0.03008150139127859, 'valid/bleu@4': 0.017987159024709244, 'valid/dist@1': 0.0869488223835665, 'valid/dist@2': 0.26332565964228793, 'valid/dist@3': 0.4490880113334514, 'valid/dist@4': 0.6004958384983177, 'valid/item_ratio': 0.5886311315742873, 'valid/sent_cnt': 5647}

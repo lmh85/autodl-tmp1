@@ -177,6 +177,7 @@ accelerate launch infer_conv.py \
     --prompt_max_length 200 \
     --entity_max_length 32
 ```
+
 自用 nohup accelerate launch infer_conv.py \
 --dataset redial \
 --split test \
