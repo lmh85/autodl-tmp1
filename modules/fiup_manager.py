@@ -108,26 +108,38 @@ class FIUPManager:
         return vec
 
     # ── Prompt 构造 ───────────────────────────────────────────────────────────
-
     def build_profile_prompt(self) -> str:
-        """
-        将双库信息转为自然语言 Prompt 片段，插入上下文中。
-        示例输出：
-          "[User Profile] Likes: action, thriller | Dislikes: romance"
-        """
-        liked = self.get_liked_attrs()
-        disliked = self.get_disliked_attrs()
+        # 只取前3个喜欢、前2个不喜欢，避免信息过载
+        likes = ", ".join(self.likes[:3]) if self.likes else ""
+        dislikes = ", ".join(self.dislikes[:2]) if self.dislikes else ""
 
-        parts = []
-        if liked:
-            parts.append(f"Likes: {', '.join(liked)}")
-        if disliked:
-            parts.append(f"Dislikes: {', '.join(disliked)}")
+        if likes and dislikes:
+            return f"User likes {likes}; user dislikes {dislikes}"
+        elif likes:
+            return f"User likes {likes}"
+        elif dislikes:
+            return f"User dislikes {dislikes}"
+        else:
+            return ""
+    # def build_profile_prompt(self) -> str:
+    #     """
+    #     将双库信息转为自然语言 Prompt 片段，插入上下文中。
+    #     示例输出：
+    #       "[User Profile] Likes: action, thriller | Dislikes: romance"
+    #     """
+    #     liked = self.get_liked_attrs()
+    #     disliked = self.get_disliked_attrs()
 
-        if not parts:
-            return ""  # 尚无足够信息时返回空串
+    #     parts = []
+    #     if liked:
+    #         parts.append(f"Likes: {', '.join(liked)}")
+    #     if disliked:
+    #         parts.append(f"Dislikes: {', '.join(disliked)}")
 
-        return "[User Profile] " + " | ".join(parts)
+    #     if not parts:
+    #         return ""  # 尚无足够信息时返回空串
+
+    #     return "[User Profile] " + " | ".join(parts)
 
     # ── 持久化 ────────────────────────────────────────────────────────────────
 
