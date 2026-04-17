@@ -24,7 +24,7 @@ from model_prompt import KGPrompt
 
 from modules.sentiment import SentimentAnalyzer    # [FIUP-NEW]
 from modules.fiup_manager import FIUPManager        # [FIUP-NEW]
-from dataset_rec import build_prompt_with_fiup      # [FIUP-NEW]
+# build_prompt_with_fiup 仅推荐任务（train_rec.py）使用，对话任务不注入 Prompt
 
 
 def parse_args():
@@ -80,6 +80,9 @@ def parse_args():
     parser.add_argument("--sentiment_backend", type=str, default="textblob",
                         choices=["textblob", "transformers"],
                         help="情感分析后端")
+    parser.add_argument("--fiup_states_dir", type=str, default=None,
+                        help="FIUP 画像状态保存目录；训练结束后序列化所有用户画像，"
+                             "供 train_rec.py 加载复用。默认为 output_dir/fiup_states")
 
     args = parser.parse_args()
     return args
@@ -289,110 +292,41 @@ if __name__ == '__main__':
         train_loss = []
         prompt_encoder.train()
         for step, batch in enumerate(train_dataloader):
-            # ── [FIUP] 安全版：仅追加用户画像，不破坏原有 Prompt ✅ ──────────
+            # ── [FIUP] 对话阶段：静默积累用户画像，不修改 Prompt ─────────────
+            # 设计原则：FIUP 的目标是提升推荐性能。
+            # 对话训练阶段只负责建立画像状态（显性库 + 隐性库），
+            # 不向 Prompt 注入任何内容，保证对话任务的 BLEU/Distinct 不受影响。
+            # 积累好的 fiup_managers_conv 状态将在推荐任务训练阶段被复用。
             if args.use_fiup:
-                batch_size = len(batch["context"]["input_ids"])
-                user_ids = [f"u{step}_{i}" for i in range(batch_size)]
-                context_strs = batch.get("context_str", [""] * batch_size)
+                batch_size         = len(batch["context"]["input_ids"])
+                user_ids           = batch.get("user_id",      [f"u{step}_{i}" for i in range(batch_size)])
+                context_strs       = batch.get("context_str",  [""] * batch_size)
                 entity_names_batch = batch.get("entity_names", [[] for _ in range(batch_size)])
 
-                # 取出模型原本的正确 prompt
-                orig_prompt_ids = batch['prompt']['input_ids']
-                orig_prompt_texts = text_tokenizer.batch_decode(orig_prompt_ids, skip_special_tokens=True)
-
-                fiup_prompts = []
-                for uid, ctx_str, attrs, prompt_txt in zip(user_ids, context_strs, entity_names_batch, orig_prompt_texts):
+                for uid, ctx_str, attrs in zip(user_ids, context_strs, entity_names_batch):
                     if uid not in fiup_managers_conv:
                         fiup_managers_conv[uid] = FIUPManager(emb_dim=EMB_DIM_CONV, alpha=args.fiup_alpha)
                     mgr = fiup_managers_conv[uid]
 
-                    # 情感评分
+                    # ① 情感评分
                     e_tau = sentiment_analyzer_conv.score(ctx_str)
 
-                    # 上下文语义向量
+                    # ② 上下文语义向量（frozen RoBERTa，无梯度）
                     tokenized = text_tokenizer(
                         ctx_str,
                         return_tensors="pt",
                         max_length=128,
                         truncation=True,
-                        padding=True
+                        padding=True,
                     ).to(device)
                     with torch.no_grad():
                         context_emb = text_encoder(**tokenized).last_hidden_state[:, 0, :].squeeze(0).cpu()
 
-                    # 更新画像
+                    # ③ 更新双库（显性库 + 隐性库）—— 不调用 build_profile_prompt，不修改 batch
                     mgr.update_profile(attrs, e_tau, context_emb)
-                    fiup_prompt = mgr.build_profile_prompt()
-                    fiup_prompts.append(fiup_prompt)
 
-                # 【关键】在原有 prompt 后追加 FIUP 信息，不重建、不覆盖结构
-                new_prompt_texts = [
-                    f"[USER_PROFILE] {fiup_txt} [SEP] {orig_txt}" if fiup_txt else orig_txt
-                    for orig_txt, fiup_txt in zip(orig_prompt_texts, fiup_prompts)
-                ]
-
-                # 重新编码（保持维度、格式完全一致）
-                new_prompt_batch = text_tokenizer(
-                    new_prompt_texts,
-                    max_length=args.prompt_max_length,
-                    padding="max_length",
-                    truncation=True,
-                    return_tensors="pt"
-                ).to(device)
-
-                # 安全替换
-                batch['prompt']['input_ids'] = new_prompt_batch['input_ids']
-                batch['prompt']['attention_mask'] = new_prompt_batch['attention_mask']
-                batch["fiup_prompts"] = fiup_prompts
+                # batch['prompt'] 保持原样，对话任务训练流程完全不受影响
             # ── [FIUP] 结束 ──────────────────────────────────────────────────
-            
-            # # ── [FIUP] 对话训练 FIUP 注入（仅在 --use_fiup 时启用）──────────
-            # if args.use_fiup:
-            #     batch_size         = len(batch["context"]["input_ids"])
-            #     user_ids           = batch.get("user_id",       [f"u{step}_{i}" for i in range(batch_size)])
-            #     context_strs       = batch.get("context_str",   [""] * batch_size)
-            #     entity_names_batch = batch.get("entity_names",  [[] for _ in range(batch_size)])
-
-            #     prompt_context_list = batch.get("_prompt_context_list", context_strs)
-            #     prompt_kg_list      = batch.get("_prompt_kg_list",      [""] * batch_size)
-
-            #     fiup_prompts = []
-            #     for uid, ctx_str, attrs in zip(user_ids, context_strs, entity_names_batch):
-            #         if uid not in fiup_managers_conv:
-            #             fiup_managers_conv[uid] = FIUPManager(emb_dim=EMB_DIM_CONV, alpha=args.fiup_alpha)
-            #         mgr = fiup_managers_conv[uid]
-
-            #         e_tau = sentiment_analyzer_conv.score(ctx_str)
-
-            #         tokenized = text_tokenizer(
-            #             ctx_str,
-            #             return_tensors="pt",
-            #             max_length=128,
-            #             truncation=True,
-            #             padding=True,
-            #         ).to(device)
-            #         with torch.no_grad():
-            #             context_emb = text_encoder(**tokenized).last_hidden_state[:, 0, :].squeeze(0).cpu()
-
-            #         mgr.update_profile(attrs, e_tau, context_emb)
-            #         fiup_prompts.append(mgr.build_profile_prompt())
-
-            #     new_prompt_encodings = [
-            #         build_prompt_with_fiup(
-            #             context_text=ctx,
-            #             kg_text=kg_text,
-            #             fiup_prompt=fp,
-            #             tokenizer=text_tokenizer,
-            #             max_length=args.prompt_max_length,
-            #         )
-            #         for ctx, kg_text, fp in zip(prompt_context_list, prompt_kg_list, fiup_prompts)
-            #     ]
-            #     batch['prompt'] = {
-            #         k: torch.cat([enc[k] for enc in new_prompt_encodings], dim=0).to(device)
-            #         for k in new_prompt_encodings[0].keys()
-            #     }
-            #     batch["fiup_prompts"] = fiup_prompts
-            # # ── [FIUP] 结束对话训练 FIUP 注入 ────────────────────────────────
             with torch.no_grad():
                 token_embeds = text_encoder(**batch['prompt']).last_hidden_state
             prompt_embeds = prompt_encoder(
@@ -547,3 +481,18 @@ if __name__ == '__main__':
     final_dir = os.path.join(args.output_dir, 'final')
     prompt_encoder.save(final_dir)
     logger.info(f'save final model')
+
+    # ── [FIUP] 训练结束：序列化所有用户画像状态 ──────────────────────────────
+    # 保存后 train_rec.py 可通过 --fiup_states_dir 加载，
+    # 在对话阶段积累的画像基础上继续更新，避免推荐阶段从零重建。
+    if args.use_fiup and accelerator.is_local_main_process:
+        states_dir = args.fiup_states_dir or os.path.join(args.output_dir, 'fiup_states')
+        os.makedirs(states_dir, exist_ok=True)
+        saved_count = 0
+        for uid, mgr in fiup_managers_conv.items():
+            # uid 可能含特殊字符，做简单转义保证文件名合法
+            safe_uid = str(uid).replace('/', '_').replace('\\', '_')
+            mgr.save(os.path.join(states_dir, f'{safe_uid}.json'))
+            saved_count += 1
+        logger.info(f'[FIUP] Saved {saved_count} user profile states to {states_dir}')
+    # ─────────────────────────────────────────────────────────────────────────

@@ -70,13 +70,38 @@ nohup accelerate launch train_conv.py \
 --prompt_max_length 200 \
 --entity_max_length 32 \
 --learning_rate 1e-4 \
---output_dir /root/autodl-tmp/UniCRS-main/output_conv \
+--output_dir /root/autodl-tmp/UniCRS-main/output_conv_f \
 --use_fiup \
 --fiup_alpha 0.8 \
 --sentiment_backend textblob \
-> train_conv.log 2>&1 &
+> train_conv_fiup417.log 2>&1 &
 ```
-
+#保存画像版
+nohup accelerate launch train_conv.py \
+  --dataset redial \
+  --tokenizer microsoft/DialoGPT-small \
+  --model microsoft/DialoGPT-small \
+  --text_tokenizer roberta-base \
+  --text_encoder roberta-base \
+  --n_prefix_conv 20 \
+  --prompt_encoder /root/autodl-tmp/UniCRS-main/pre_trained_prompt/final \
+  --num_train_epochs 10 \
+  --gradient_accumulation_steps 1 \
+  --ignore_pad_token_for_loss \
+  --per_device_train_batch_size 16 \
+  --per_device_eval_batch_size 16 \
+  --num_warmup_steps 6345 \
+  --context_max_length 200 \
+  --resp_max_length 183 \
+  --prompt_max_length 200 \
+  --entity_max_length 32 \
+  --learning_rate 1e-4 \
+  --output_dir /root/autodl-tmp/UniCRS-main/output_conv \
+  --use_fiup \
+  --fiup_alpha 0.8 \
+  --sentiment_backend textblob \
+  --fiup_states_dir /root/autodl-tmp/UniCRS-main/output_conv/fiup_states \
+  > train_conv_pro.log 2>&1 &
 ---
 
 ### 第四步：对话推理（不涉及 FIUP，命令不变）
